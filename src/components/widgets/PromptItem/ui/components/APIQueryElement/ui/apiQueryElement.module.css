@@ -1,0 +1,25 @@
+.code {
+    display: grid;
+
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--tg-theme-secondary-bg-color);
+
+}
+
+.accent {
+    color: var(--tg-theme-accent-text-color)
+}
+
+.code p {
+    color: var(--tg-theme-hint-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
+
+@media (max-width:480px) {
+    .code {
+        max-width: 300px;
+    }
+}

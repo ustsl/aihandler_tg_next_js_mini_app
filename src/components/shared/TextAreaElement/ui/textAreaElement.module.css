@@ -1,0 +1,9 @@
+.block {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    color: var(--tg-theme-hint-color);
+    border: none;
+    background-color: var(--tg-theme-secondary-bg-color);
+}

@@ -1,0 +1,6 @@
+.block {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--tg-theme-section-bg-color);
+    box-sizing: border-box;
+}

@@ -1,0 +1,1 @@
+export { WalletBlock } from "./ui/WalletBlock";

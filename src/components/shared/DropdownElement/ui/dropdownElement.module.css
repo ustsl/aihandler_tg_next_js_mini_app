@@ -1,0 +1,21 @@
+.block {
+    display: grid;
+    gap: 10px;
+    color: var(--tg-theme-hint-color);
+
+}
+
+.block label {
+    display: block;
+}
+
+.block select {
+    width: 200px;
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-hint-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}

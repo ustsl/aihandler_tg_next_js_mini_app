@@ -1,0 +1,12 @@
+.title {
+    margin: 0px;
+    color: var(--tg-theme-section-header-text-color)
+}
+
+.green {
+    color: var(--green);
+}
+
+.light {
+    font-weight: 500;
+}

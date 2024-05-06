@@ -1,0 +1,34 @@
+.block {
+    display: flex;
+    align-items: center;
+    color: var(--tg-theme-accent-text-color);
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    transition: all .2s ease;
+}
+
+.block:hover {
+    opacity: .9 !important;
+}
+
+.block svg {
+    font-size: 1.4em;
+}
+
+
+.block span {
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
