@@ -7,6 +7,7 @@
     padding-bottom: 10px;
     border-bottom: 1px solid var(--tg-theme-secondary-bg-color);
     text-decoration: none;
+    transition: all .2s ease;
 }
 
 .prompt:last-child {
@@ -16,7 +17,13 @@
 .prompt .title {
     color: var(--tg-theme-section-header-text-color);
     font-weight: 500;
+    transition: all .2s ease;
 }
+
+.prompt:hover .title {
+    color: var(--tg-theme-accent-text-color)
+}
+
 
 .prompt .descr {
     color: var(--tg-theme-text-color);

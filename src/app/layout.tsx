@@ -10,6 +10,7 @@ import { GridBlock } from "@/components/shared/GridBlock";
 import { FooterComponent } from "@/components/widgets/FooterComponent";
 import { DataWrapper } from "@/components/shared/DataWrapper";
 import { CloseButton } from "@/components/features/CloseButton";
+import { NotificationComponent } from "@/components/widgets/NotificationWidget";
 
 
 
@@ -52,6 +53,7 @@ export default function RootLayout({
             </GridBlock>
           </DataWrapper>
         </TelegramWrapper>
+        <NotificationComponent />
       </body>
     </html>
   );

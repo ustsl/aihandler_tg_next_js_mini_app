@@ -1,9 +1,8 @@
 'use client'
 
 import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
-import styles from './closeButton.module.css'
-
 import { useTelegramStore } from "@/store/useTelegramStore"
+import { MiniButtonComponent } from '@/components/shared/MiniButtonComponent'
 
 export const CloseButton = () => {
     const { tg } = useTelegramStore((state: any) => state)
@@ -14,7 +13,7 @@ export const CloseButton = () => {
 
     return (
         <ContainerWrapper>
-            <button onClick={onClick} className={styles.button}>Return to telegram chat</button>
+            <MiniButtonComponent text="Return to telegram chat" onClick={onClick} />
         </ContainerWrapper>
     )
 }

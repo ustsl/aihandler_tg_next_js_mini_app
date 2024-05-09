@@ -11,11 +11,14 @@ import { useTelegramStore } from '@/store/useTelegramStore';
 import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
 import { SearchBlock } from './components/SearchBlock'
 import { ItemsBlock } from './components/ItemsBlock';
+import { Pagination } from './components/Pagination';
 
 
 export const PromptList = () => {
 
     const [results, setResults] = useState<any>([])
+    const [offset, setOffset] = useState<number>(0)
+    const [limit, setLimit] = useState<number>(0)
     const [isLoad, setIsLoad] = useState<boolean>(false)
 
     const { userToken } = useDataStore((state: any) => state);
@@ -23,10 +26,11 @@ export const PromptList = () => {
 
     function userDataCreate() {
         const headers = { 'Authorization': userToken as string } as any
-        const queryLink = `/prompts/${userId}`
+        const queryLink = `/prompts/${userId}?offset=${offset}`
         getBaseQuery(queryLink, headers).then((res) => {
             if (res?.result) {
                 setResults(res?.result)
+                setLimit(parseInt(res?.total))
                 setIsLoad(true)
             }
         })
@@ -37,9 +41,7 @@ export const PromptList = () => {
             userDataCreate()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-
+    }, [offset]);
 
     return (
         <ContainerWrapper>
@@ -47,9 +49,18 @@ export const PromptList = () => {
                 <h2 className={styles.hint}>
                     Available prompts
                 </h2>
-                <SearchBlock />
-                {isLoad && <ItemsBlock results={results} />}
+                {isLoad &&
+                    results.length > 0 ?
+                    <>
+                        <SearchBlock />
+                        <ItemsBlock results={results} />
+                    </>
+                    :
+                    <p>No available prompts. Create your first prompt</p>
+
+                }
+                <Pagination length={results.length} offset={offset} limit={limit} setOffset={setOffset} />
             </section>
-        </ContainerWrapper>
+        </ContainerWrapper >
     )
 }

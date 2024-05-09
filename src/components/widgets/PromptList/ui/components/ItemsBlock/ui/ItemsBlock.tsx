@@ -10,7 +10,7 @@ export const ItemsBlock = ({ results }: { results: IPromptList[] }) => {
                 return (
                     <Link href={`/prompts/id/${item.uuid}`} key={index} className={styles.prompt}>
                         <span className={styles.title}>{item.title}</span>
-                        <span className={styles.descr}> — {item.description}</span>
+                        {item.description && <span className={styles.descr}> — {item.description}</span>}
                     </Link>)
             })}</div>
     )

@@ -6,8 +6,8 @@ export const FooterComponent = () => {
     return (
         <ContainerWrapper>
             <footer className={styles.footer}>
-                <CardBlock href={'/'} title={'About'} description={'About the application and manual for new users.'} />
-                <CardBlock href={'/'} title={'API'} description={'Using the API service outside the telegram interface.'} />
+                <CardBlock href={'/about'} title={'About'} description={'About the application and manual for new users.'} />
+                <CardBlock href={'/api'} title={'API'} description={'Using the API service outside the telegram interface.'} />
             </footer>
         </ContainerWrapper>
 

@@ -1,6 +1,7 @@
 .title {
     margin: 0px;
-    color: var(--tg-theme-section-header-text-color)
+    color: var(--tg-theme-section-header-text-color);
+    font-weight: 400;
 }
 
 .green {
@@ -9,4 +10,12 @@
 
 .light {
     font-weight: 500;
+}
+
+h1.title {
+    font-size: 1.7em;
+}
+
+h2.title {
+    font-size: 1.5em;
 }

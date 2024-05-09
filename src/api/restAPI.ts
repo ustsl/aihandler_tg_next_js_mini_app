@@ -41,29 +41,24 @@ export async function getResponse({ token, method }: IAPI) {
 }
 
 
-export async function postResponse({ method, data }: { method: string, data: any }) {
-
+export async function postResponse({ token, body, method }: IAPIPost) {
   const url = API_DOMAIN + API_VERSION + method;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      ...HEADERS,
-    },
-    body: JSON.stringify(data)
-  });
-
-
-  if (!res.ok) {
-    const errorBody = await res.json();
-    console.error('API error response:', errorBody);
-    throw new Error(`Failed to post data: ${errorBody.detail || 'Unknown error'}`);
+  const headers = createHeaders(token)
+  try {
+    console.log(url)
+    const response = await axios.post(url, body, { headers });
+    return response;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      // Если ошибка является экземпляром AxiosError, возвращаем информацию об ошибке
+      const data = error.response ? error.response.data : error.message;
+      data['error'] = true
+      return data
+    } else {
+      raiseAxiosError
+    }
   }
-
-
-  return res.json();
 }
-
-
 
 export async function putResponse({ token, body, method }: IAPIPost) {
   const url = API_DOMAIN + API_VERSION + method;

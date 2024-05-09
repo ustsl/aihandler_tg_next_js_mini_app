@@ -1,6 +1,17 @@
+import { ModelOptions, ModelSize } from '@/components/entities/PromptForm/ui/PromptForm';
 import { useState } from 'react';
 
-export function usePromptFormFields(initialState: any) {
+export interface PromptFormFields {
+    title: string;
+    description: string;
+    prompt: string;
+    model: ModelOptions;
+    isOpen: boolean;
+    size: ModelSize
+}
+
+
+export function usePromptFormFields(initialState: PromptFormFields) {
     const [fields, setFields] = useState(initialState);
     const [isChanged, setIsChanged] = useState(false);
 
