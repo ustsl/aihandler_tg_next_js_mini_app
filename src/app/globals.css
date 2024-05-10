@@ -5,7 +5,8 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --tg-theme-bg-color: rgb(194, 194, 194);
+  /* using for tests with fake telegram id*/
+  /* --tg-theme-bg-color: rgb(194, 194, 194);
   --tg-theme-secondary-bg-color: #0f0f0f;
   --tg-theme-subtitle-text-color: #303030;
   --tg-theme-button-color: #8774e1;
@@ -13,7 +14,9 @@
   --tg-theme-hint-color: #aaaaaa;
   --tg-theme-accent-text-color: #8774e1;
   --tg-theme-text-color: white;
-  --tg-theme-section-header-text-color: #aaaaaa;
+  --tg-theme-section-header-text-color: #aaaaaa; */
+
+
   --success-color: #2D9D54;
   --accent-color: #246587;
 }
