@@ -7,9 +7,8 @@ export const useTelegramStore = create((set) => ({
     avatar: null,
     setTg: (tg: any) => set(() => ({
         tg: tg,
-        //userId: tg?.initDataUnsafe?.user?.id,
-        //userId: 123123123
-        userId: 9292,//315854463,
+        userId: tg?.initDataUnsafe?.user?.id,
+        //userId: 9292,//315854463,
         avatar: null
     })),
     removeTg: () => set({ tg: null }),
