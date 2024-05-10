@@ -6,13 +6,16 @@ import { ITextArea } from './textAreaElement.props'
 
 export const TextAreaElement = ({ placeholder, label, value, rows, cols, onChange }: ITextArea) => {
     return (
-        <textarea
-            className={styles.block}
-            placeholder={placeholder ? placeholder : label}
-            value={value}
-            rows={rows}
-            cols={cols}
-            onChange={(event: ChangeEvent<HTMLTextAreaElement>) => onChange(event)}
-        />
+        <div className={styles.block}>
+            <label>{label}</label>
+            <textarea
+                className={styles.area}
+                placeholder={placeholder ? placeholder : label}
+                value={value}
+                rows={rows}
+                cols={cols}
+                onChange={(event: ChangeEvent<HTMLTextAreaElement>) => onChange(event)}
+            />
+        </div>
     )
 }
