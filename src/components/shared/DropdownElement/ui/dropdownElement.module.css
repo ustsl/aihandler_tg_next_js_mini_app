@@ -7,12 +7,15 @@
 
 .block label {
     display: block;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--tg-theme-section-header-text-color)
 }
 
 .block select {
     width: 150px;
     background-color: var(--tg-theme-secondary-bg-color);
-    color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-text-color);
     padding: 10px;
     border: none;
     border-radius: 5px;

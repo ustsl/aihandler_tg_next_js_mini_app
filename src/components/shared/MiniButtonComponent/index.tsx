@@ -1,1 +1,1 @@
-export { MiniButtonComponent } from "./ui/MiniButtonComponent";
+export { MiniButtonComponent, MiniButtonLinkComponent } from "./ui/MiniButtonComponent";

@@ -11,6 +11,9 @@ import { FooterComponent } from "@/components/widgets/FooterComponent";
 import { DataWrapper } from "@/components/shared/DataWrapper";
 import { CloseButton } from "@/components/features/CloseButton";
 import { NotificationComponent } from "@/components/widgets/NotificationWidget";
+import { FlexWrapper } from "@/components/shared/FlexWrapper";
+import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
+import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 
 
 
@@ -49,7 +52,12 @@ export default function RootLayout({
               <HeaderComponent />
               {children}
               <FooterComponent />
-              <CloseButton />
+              <ContainerWrapper>
+                <FlexWrapper>
+                  <CloseButton />
+                  <MiniButtonLinkComponent href="https://t.me/ustsl" text="Write to Developer" />
+                </FlexWrapper>
+              </ContainerWrapper>
             </GridBlock>
           </DataWrapper>
         </TelegramWrapper>

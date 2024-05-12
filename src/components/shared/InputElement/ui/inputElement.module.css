@@ -6,6 +6,9 @@
 
 .block label {
     display: block;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--tg-theme-section-header-text-color)
 }
 
 
@@ -14,7 +17,7 @@
     width: 100%;
     padding: 10px 20px;
     border-radius: var(--border-radius);
-    color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-text-color);
     border: none;
     background-color: var(--tg-theme-secondary-bg-color);
 }
