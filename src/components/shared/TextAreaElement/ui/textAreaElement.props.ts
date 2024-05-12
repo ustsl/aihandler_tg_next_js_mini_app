@@ -1,6 +1,6 @@
 export interface ITextArea {
     placeholder?: string
-    label: string
+    label?: React.ReactNode
     value: string
     rows: number
     cols: number

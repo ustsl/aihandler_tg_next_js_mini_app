@@ -12,6 +12,7 @@ import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
 import { SearchBlock } from './components/SearchBlock'
 import { ItemsBlock } from './components/ItemsBlock';
 import { Pagination } from './components/Pagination';
+import { QuestionDataWrapper } from '@/components/shared/QuestionDataWrapper';
 
 
 export const PromptList = () => {
@@ -46,9 +47,11 @@ export const PromptList = () => {
     return (
         <ContainerWrapper>
             <section className={styles.block}>
-                <h2 className={styles.hint}>
-                    Available prompts
-                </h2>
+                <QuestionDataWrapper text={'A list of available prompts is displayed here. Go to any of them to edit, get an API link, or select as a chat preset.'}>
+                    <h2 className={styles.hint}>
+                        Available prompts
+                    </h2>
+                </QuestionDataWrapper>
                 {isLoad &&
                     results.length > 0 ?
                     <>

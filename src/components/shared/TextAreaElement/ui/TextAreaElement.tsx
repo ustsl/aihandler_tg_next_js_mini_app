@@ -10,7 +10,7 @@ export const TextAreaElement = ({ placeholder, label, value, rows, cols, onChang
             <label>{label}</label>
             <textarea
                 className={styles.area}
-                placeholder={placeholder ? placeholder : label}
+                placeholder={placeholder}
                 value={value}
                 rows={rows}
                 cols={cols}

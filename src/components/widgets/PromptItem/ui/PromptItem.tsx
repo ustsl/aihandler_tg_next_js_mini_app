@@ -9,6 +9,7 @@ import { APIQueryElement } from './components/APIQueryElement/ui/APIQueryElement
 import { usePromptFormFields } from "@/hooks/usePromptData"
 import { PromptForm, modelSizeTranslator, modelSizeReTranslator } from "@/components/entities/PromptForm"
 import { useNotificationStore } from "../../NotificationWidget"
+import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
 
 export const PromptItem = ({ uuid }: { uuid: string }) => {
     const [isLoad, setIsLoad] = useState(false)
@@ -72,7 +73,9 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
 
                 <ContainerWrapper>
                     <GridBlock gridSize='XS'>
-                        <TitleBlock tag={"h2"} text={"API-Query example"} />
+                        <QuestionDataWrapper text={"Use the example of this request to directly use your prompt in your own integrations outside of Telegram chat."}>
+                            <TitleBlock tag={"h2"} text={"API-Query example"} />
+                        </QuestionDataWrapper>
                         <APIQueryElement tg={userId} userToken={userToken} uuid={uuid} />
                     </GridBlock>
                 </ContainerWrapper>

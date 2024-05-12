@@ -5,7 +5,7 @@ interface IInputElement {
     placeholder: string
     name: string
     value: string
-    label?: string
+    label?: string | React.ReactNode
     onChange: (event: any) => void
     required?: true
 }
