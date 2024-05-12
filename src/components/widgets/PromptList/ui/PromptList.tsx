@@ -19,6 +19,7 @@ export const PromptList = () => {
 
     const [results, setResults] = useState<any>([])
     const [offset, setOffset] = useState<number>(0)
+    const [searchQuery, setSearchQuery] = useState<string>('')
     const [limit, setLimit] = useState<number>(0)
     const [isLoad, setIsLoad] = useState<boolean>(false)
 
@@ -27,7 +28,7 @@ export const PromptList = () => {
 
     function userDataCreate() {
         const headers = { 'Authorization': userToken as string } as any
-        const queryLink = `/prompts/${userId}?offset=${offset}`
+        const queryLink = `/prompts/${userId}?offset=${offset}&search_query=${searchQuery}`
         getBaseQuery(queryLink, headers).then((res) => {
             if (res?.result) {
                 setResults(res?.result)
@@ -42,7 +43,7 @@ export const PromptList = () => {
             userDataCreate()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [offset]);
+    }, [offset, searchQuery]);
 
     return (
         <ContainerWrapper>
@@ -52,12 +53,11 @@ export const PromptList = () => {
                         Available prompts
                     </h2>
                 </QuestionDataWrapper>
+                <SearchBlock searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 {isLoad &&
                     results.length > 0 ?
-                    <>
-                        <SearchBlock />
-                        <ItemsBlock results={results} />
-                    </>
+
+                    <ItemsBlock results={results} />
                     :
                     <p>No available prompts. Create your first prompt</p>
 

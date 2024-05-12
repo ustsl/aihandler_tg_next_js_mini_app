@@ -1,28 +1,33 @@
-'use client'
-
-import styles from './searchBlock.module.css'
-
-import { useState } from 'react'
-
 import { InputElement } from "@/components/shared/InputElement"
-import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
+import { debounce } from "@/utils/debounce";
+import { useState, useRef } from "react";
 
-export const SearchBlock = () => {
+interface ISearchQuery {
+    searchQuery: string
+    setSearchQuery: (data: string) => void
+}
 
-    const [query, setQuery] = useState('')
 
-    function handleInputChange(event: any) {
-        setQuery(event?.target?.value)
+export const SearchBlock = ({ searchQuery, setSearchQuery }: ISearchQuery) => {
+    const [localQuery, setLocalQuery] = useState(searchQuery)
+
+    const debounceRef = useRef(debounce((value: string) => {
+        setSearchQuery(value);
+    }, 400));
+
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const { value } = event.target;
+        setLocalQuery(value);
+        debounceRef.current(value);
     }
 
     return (
         <InputElement
             placeholder="Prompt search panel"
             name="text"
-            value={query}
+            value={localQuery}
             onChange={handleInputChange}
             required
         />
-
     )
 }
