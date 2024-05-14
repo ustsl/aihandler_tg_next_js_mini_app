@@ -7,11 +7,12 @@ import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
 
 import { TextAreaElement } from "@/components/shared/TextAreaElement"
 
-export type ModelOptions = 'gpt-3.5-turbo' | 'gpt-4-turbo'
+export type ModelOptions = 'gpt-3.5-turbo' | 'gpt-4-turbo' | 'gpt-4o'
 
 export const modelOptions: ModelOptions[] = [
     'gpt-3.5-turbo',
-    'gpt-4-turbo'
+    'gpt-4-turbo',
+    'gpt-4o'
 ]
 
 export type ModelSize = 'no memory' | 'low' | 'medium' | 'large';
