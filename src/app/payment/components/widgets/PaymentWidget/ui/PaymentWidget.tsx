@@ -25,20 +25,17 @@ export const PaymentWidget = () => {
         try {
             const response = await cryptoCloudResponse(amount);
             if (response && response.status == 200 && response?.data) {
-                console.log(123)
                 const successUrl = response.data.pay_url as string
                 const invoiceId = response.data.invoice_id as string
                 const paymentServiceResult = await paymentServiceResponse(amount, invoiceId, userId)
-                console.log(paymentServiceResult)
-                console.log(98)
                 if (paymentServiceResult && paymentServiceResult.status == 200) {
-
+                    setNotification({ message: "Payment processed successfully." });
                     router.push(successUrl)
                 }
             }
             console.log(response)
             console.log(response.status)
-            setNotification({ message: "Payment processed successfully." });
+
         } catch (error) {
             console.log(error)
             setNotification({ message: "Payment processing failed. Please try again later." });
