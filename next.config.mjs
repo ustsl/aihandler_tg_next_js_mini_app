@@ -11,6 +11,9 @@ const nextConfig = {
     },
     env: {
         API_SECRET_KEY: process.env.API_SECRET_KEY,
+        PAYMENT_SECRET_KEY: process.env.PAYMENT_SECRET_KEY,
+        CRYPTOCLOUD_SECRET_KEY: process.env.CRYPTOCLOUD_SECRET_KEY,
+        CRYPTOCLOUD_SHOP_ID: process.env.CRYPTOCLOUD_SHOP_ID,
     }
 };
 

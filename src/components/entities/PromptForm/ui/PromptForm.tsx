@@ -15,10 +15,11 @@ export const modelOptions: ModelOptions[] = [
     'gpt-4o'
 ]
 
-export type ModelSize = 'no memory' | 'low' | 'medium' | 'large';
+export type ModelSize = 'no memory' | 'one message' | 'low' | 'medium' | 'large';
 
 export const modelSizeOptions: ModelSize[] = [
     'no memory',
+    'one message',
     'low',
     'medium',
     'large'
@@ -29,6 +30,8 @@ export function modelSizeTranslator(modelSizeOptions: ModelSize): number {
     switch (modelSizeOptions) {
         case 'no memory':
             return 0
+        case 'one message':
+            return 1
         case 'low':
             return 5
         case 'medium':
@@ -45,6 +48,8 @@ export function modelSizeReTranslator(modelSizeOptions: number): ModelSize {
     switch (modelSizeOptions) {
         case 0:
             return 'no memory'
+        case 1:
+            return 'one message'
         case 5:
             return 'low'
         case 15:

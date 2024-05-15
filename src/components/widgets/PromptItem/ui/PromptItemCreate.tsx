@@ -5,6 +5,7 @@ import { usePromptFormFields } from "@/hooks/usePromptData"
 import { modelSizeTranslator, PromptForm } from "@/components/entities/PromptForm"
 import { useRouter } from 'next/navigation'
 import { useNotificationStore } from "../../NotificationWidget"
+import { API_DOMAIN, API_VERSION } from "@/api/settings"
 
 export const PromptItemCreate = () => {
 
@@ -19,7 +20,7 @@ export const PromptItemCreate = () => {
         title: '',
         description: '',
         prompt: '',
-        model: 'gpt-4-turbo',
+        model: 'gpt-4o',
         isOpen: false,
         size: 'no memory'
     });
@@ -34,7 +35,7 @@ export const PromptItemCreate = () => {
             "is_open": false,
             "context_story_window": modelSizeTranslator(fields.size)
         }
-        const url = `/prompts/${userId}`
+        const url = `${API_DOMAIN}${API_VERSION}/prompts/${userId}`
         postResponse({ token: userToken, body: body, method: url }).then((res) => {
             if (res?.error) {
                 const detail = res.detail

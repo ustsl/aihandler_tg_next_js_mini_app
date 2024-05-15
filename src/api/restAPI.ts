@@ -42,11 +42,10 @@ export async function getResponse({ token, method }: IAPI) {
 
 
 export async function postResponse({ token, body, method }: IAPIPost) {
-  const url = API_DOMAIN + API_VERSION + method;
+
   const headers = createHeaders(token)
   try {
-    console.log(url)
-    const response = await axios.post(url, body, { headers });
+    const response = await axios.post(method, body, { headers });
     return response;
   } catch (error) {
     if (axios.isAxiosError(error)) {

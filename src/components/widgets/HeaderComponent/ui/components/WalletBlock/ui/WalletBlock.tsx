@@ -12,7 +12,7 @@ export const WalletBlock = () => {
     const { userBalance, } = useDataStore((state: any) => state);
 
     return (
-        <Link href="/" className={styles.block}>
+        <Link href="/payment" className={styles.block}>
             {userBalance && <span>${userBalance.toFixed(3)}</span>}
             <FontAwesomeIcon icon={faPlus} height={30} width={30} />
         </Link>

@@ -4,7 +4,7 @@ import styles from './inputElement.module.css'
 interface IInputElement {
     placeholder: string
     name: string
-    value: string
+    value: string | number
     label?: string | React.ReactNode
     onChange: (event: any) => void
     required?: true
