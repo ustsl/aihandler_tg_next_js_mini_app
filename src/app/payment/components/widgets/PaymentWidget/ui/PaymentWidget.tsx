@@ -27,7 +27,7 @@ export const PaymentWidget = () => {
             if (response && response.status == 200 && response?.data) {
                 const successUrl = response.data.pay_url as string
                 const invoiceId = response.data.invoice_id as string
-                const paymentServiceResult = await paymentServiceResponse(amount, invoiceId, userId)
+                const paymentServiceResult = await paymentServiceResponse(amount, invoiceId, `${userId}`)
                 if (paymentServiceResult && paymentServiceResult.status == 200) {
                     setNotification({ message: "Payment processed successfully." });
                     router.push(successUrl)
