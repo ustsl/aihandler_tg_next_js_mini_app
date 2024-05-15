@@ -22,10 +22,8 @@ export const PaymentWidget = () => {
 
     async function handlePaymentAuth(event: any) {
         event.preventDefault();
-        setIsProcess(true); // Устанавливаем флаг, что процесс начался
-
         try {
-            const response = await cryptoCloudResponse(amount); // Вызываем функцию cryptoCloudResponse
+            const response = await cryptoCloudResponse(amount);
             if (response && response.status == 200 && response?.data) {
                 console.log(123)
                 const successUrl = response.data.pay_url as string
@@ -42,10 +40,6 @@ export const PaymentWidget = () => {
             console.log(response.status)
             setNotification({ message: "Payment processed successfully." });
         } catch (error) {
-            setIsProcess(false); // Сбрасываем флаг, что процесс закончился
-
-            // Здесь можно обработать ошибку, например, установить уведомление об ошибке
-            setError(error as string);
             console.log(error)
             setNotification({ message: "Payment processing failed. Please try again later." });
         }

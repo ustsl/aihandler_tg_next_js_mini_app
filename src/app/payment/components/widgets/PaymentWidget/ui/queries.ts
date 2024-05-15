@@ -8,6 +8,10 @@ export async function cryptoCloudResponse(amount: number) {
         shop_id: CRYPTOCLOUD_SHOP_ID,
         amount: amount
     };
+    console.log(123123)
+    console.log(CRYPTOCLOUD_SHOP_ID)
+    console.log(CRYPTOCLOUD_TOKEN)
+    console.log(23324324)
     const url = "https://api.cryptocloud.plus/v1/invoice/create"
     try {
         const response = await postResponse({
