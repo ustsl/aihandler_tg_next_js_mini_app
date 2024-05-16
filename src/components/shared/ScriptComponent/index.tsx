@@ -1,1 +1,0 @@
-export { ScriptsBlock } from "./ui/ScriptComponent";

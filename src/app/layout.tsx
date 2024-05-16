@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { ScriptsBlock } from "@/components/shared/ScriptComponent";
+
 import { TelegramWrapper } from "@/components/shared/TelegramWrapper";
 import { HeaderComponent } from "@/components/widgets/HeaderComponent";
 import { GridBlock } from "@/components/shared/GridBlock";
@@ -14,6 +14,7 @@ import { NotificationComponent } from "@/components/widgets/NotificationWidget";
 import { FlexWrapper } from "@/components/shared/FlexWrapper";
 import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
+import { ScriptsBlock } from "@/components/shared/ScriptsBlock";
 
 
 
@@ -44,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ScriptsBlock />
+      <ScriptsBlock gtmList={'GTM-5Q75X56W'} />
       <body className={inter.className}>
         <TelegramWrapper>
           <DataWrapper>
