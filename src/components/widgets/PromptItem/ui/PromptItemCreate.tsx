@@ -6,6 +6,7 @@ import { modelSizeTranslator, PromptForm } from "@/components/entities/PromptFor
 import { useRouter } from 'next/navigation'
 import { useNotificationStore } from "../../NotificationWidget"
 import { API_DOMAIN, API_VERSION } from "@/api/settings"
+import { isOpenTranslator } from "@/components/entities/PromptForm/ui/PromptForm"
 
 export const PromptItemCreate = () => {
 
@@ -21,7 +22,7 @@ export const PromptItemCreate = () => {
         description: '',
         prompt: '',
         model: 'gpt-4o',
-        isOpen: false,
+        isOpen: 'open',
         size: 'no memory',
     });
 
@@ -32,7 +33,7 @@ export const PromptItemCreate = () => {
             "description": fields.description,
             "prompt": fields.prompt,
             "model": fields.model,
-            "is_open": fields.isOpen,
+            "is_open": isOpenTranslator(fields.isOpen),
             "context_story_window": modelSizeTranslator(fields.size)
         }
         const url = `${API_DOMAIN}${API_VERSION}/prompts/${userId}`
