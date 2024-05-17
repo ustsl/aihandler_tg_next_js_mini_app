@@ -19,9 +19,8 @@ export async function getBaseQuery(method: string, headers = HEADERS) {
 
   const res = await fetch(url, { headers: headers })
 
-
   if (!res.ok) {
-    return notFound()
+    return false
   }
   return res.json()
 }

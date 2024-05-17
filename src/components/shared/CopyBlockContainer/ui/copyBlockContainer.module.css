@@ -1,11 +1,25 @@
+.flex {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.copy {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.copy svg {
+    color: var(--tg-theme-accent-text-color)
+}
+
 .code {
     display: grid;
-
     padding: 20px;
     border-radius: var(--border-radius);
     background-color: var(--tg-theme-secondary-bg-color);
-
 }
+
 
 .accent {
     color: var(--tg-theme-accent-text-color)
@@ -15,7 +29,6 @@
     color: var(--tg-theme-hint-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
-
 }
 
 @media (max-width:480px) {

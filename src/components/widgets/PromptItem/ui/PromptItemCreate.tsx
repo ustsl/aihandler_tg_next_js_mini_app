@@ -22,7 +22,7 @@ export const PromptItemCreate = () => {
         prompt: '',
         model: 'gpt-4o',
         isOpen: false,
-        size: 'no memory'
+        size: 'no memory',
     });
 
     function saveChangesHandler() {
@@ -32,7 +32,7 @@ export const PromptItemCreate = () => {
             "description": fields.description,
             "prompt": fields.prompt,
             "model": fields.model,
-            "is_open": false,
+            "is_open": fields.isOpen,
             "context_story_window": modelSizeTranslator(fields.size)
         }
         const url = `${API_DOMAIN}${API_VERSION}/prompts/${userId}`

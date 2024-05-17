@@ -1,8 +1,16 @@
-import styles from './apiQueryElement.module.css'
+import React from 'react';
+import { CopyBlockContainer } from '@/components/shared/CopyBlockContainer';
 
 export const APIQueryElement = ({ tg, userToken, uuid }: { tg: string, userToken: string, uuid: string }) => {
+
+    const url = `URL: https://aihandler.qsbot.app/v1/queries/${tg}`;
+    const headers = `Headers: {'Authorization': '${userToken}'}`;
+    const body = `Body: {"prompt_id": "${uuid}", "query": "your text query"}`;
+    const textToCopy = `${url}\n${headers}\n${body}`;
+
+
     return (
-        <div className={styles.code}>
+        <CopyBlockContainer textToCopy={textToCopy}>
             <p>
                 URL: https://aihandler.qsbot.app/v1/queries/{tg}
             </p>
@@ -16,6 +24,7 @@ export const APIQueryElement = ({ tg, userToken, uuid }: { tg: string, userToken
                                 "query": "your text query"
                                 }`}
             </p>
-        </div>
+        </CopyBlockContainer>
+
     )
-}
+};

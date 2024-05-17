@@ -13,7 +13,7 @@ export const SearchBlock = ({ searchQuery, setSearchQuery }: ISearchQuery) => {
 
     const debounceRef = useRef(debounce((value: string) => {
         setSearchQuery(value);
-    }, 400));
+    }, 1000));
 
     function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { value } = event.target;
