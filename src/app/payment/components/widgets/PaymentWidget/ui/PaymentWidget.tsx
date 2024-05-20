@@ -9,14 +9,12 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { cryptoCloudResponse, paymentServiceResponse } from "./queries"
 import { useTelegramStore } from "@/store/useTelegramStore"
+import { YMCOUNTER } from '@/const'
 
 export const PaymentWidget = () => {
     const router = useRouter()
 
     const [amount, setAmount] = useState<number>(30)
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState(false);
-    const [isProcess, setIsProcess] = useState(false);
     const { userId } = useTelegramStore((state: any) => state)
     const { setNotification } = useNotificationStore((state: any) => state);
 
@@ -30,11 +28,14 @@ export const PaymentWidget = () => {
                 const paymentServiceResult = await paymentServiceResponse(amount, invoiceId, `${userId}`)
                 if (paymentServiceResult && paymentServiceResult.status == 200) {
                     setNotification({ message: "Payment processed successfully." });
+                    window.ym(YMCOUNTER, 'reachGoal', 'startPayment');
+                    window.dataLayer.push({
+                        'event': 'startPayment',
+                    });
                     router.push(successUrl)
                 }
             }
-            console.log(response)
-            console.log(response.status)
+
 
         } catch (error) {
             console.log(error)

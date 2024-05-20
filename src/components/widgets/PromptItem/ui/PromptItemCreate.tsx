@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { useNotificationStore } from "../../NotificationWidget"
 import { API_DOMAIN, API_VERSION } from "@/api/settings"
 import { isOpenTranslator } from "@/components/entities/PromptForm/ui/PromptForm"
+import { YMCOUNTER } from "@/const"
 
 export const PromptItemCreate = () => {
 
@@ -46,6 +47,10 @@ export const PromptItemCreate = () => {
                     setNotification({ message: res.detail[0].msg, type: "warning" })
                 }
             } else {
+                window.ym(YMCOUNTER, 'reachGoal', 'createPrompt');
+                window.dataLayer.push({
+                    'event': 'createPrompt',
+                });
                 router.push(`/prompts/id/${res.data.id}`)
             }
         })

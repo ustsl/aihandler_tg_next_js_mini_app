@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 declare global {
   interface Window {
     ym: any;
+    dataLayer: any;
     Telegram: {
       WebApp: any;
     };
