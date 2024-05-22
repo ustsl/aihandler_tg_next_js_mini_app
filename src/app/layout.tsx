@@ -58,6 +58,7 @@ export default function RootLayout({
                 <FlexWrapper>
                   <CloseButton />
                   <MiniButtonLinkComponent href="https://t.me/ustsl" text="Write to Developer" />
+                  <MiniButtonLinkComponent href="https://imvo.site/faq" text="Read instructions" />
                 </FlexWrapper>
               </ContainerWrapper>
             </GridBlock>
