@@ -15,10 +15,10 @@ export const modelQuestion = PromptDataGenerator('The list of available models w
 export const styleQuestion = PromptDataGenerator('In graphic prompts, an optional format allows you to define additional filters on the image, making it either more realistic or more vibrant.',
     "Set additional image style")
 
-export const qualityQuestion = PromptDataGenerator('In graphic prompts, an optional format allows you to define additional filters on the image, making it either more realistic or more vibrant.',
+export const qualityQuestion = PromptDataGenerator('Generating an image in a standard format is cheaper. If you need the highest possible quality, then choose HD.',
     "Set image quality")
 
-export const sizeQuestion = PromptDataGenerator('In graphic prompts, an optional format allows you to define additional filters on the image, making it either more realistic or more vibrant.',
+export const sizeQuestion = PromptDataGenerator('The image can be generated in one of three selected proportions and sizes.',
     "Set image size")
 
 export const memoryQuestion = PromptDataGenerator('The higher the value, the more previous answers the AI remembers. But the higher the chance that the AI will respond less accurately, and also the higher the cost of use. If the task does not require a dynamic context, do not use memory storage. But it can be useful in complex prompts.', 'Choose memory size')
