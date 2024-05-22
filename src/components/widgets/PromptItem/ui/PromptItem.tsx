@@ -7,11 +7,14 @@ import { useTelegramStore } from "@/store/useTelegramStore"
 import { useEffect } from "react"
 import { APIQueryElement } from './components/APIQueryElement/ui/APIQueryElement'
 import { usePromptFormFields } from "@/hooks/usePromptData"
-import { PromptForm, modelSizeTranslator, modelSizeReTranslator } from "@/components/entities/PromptForm"
+import { PromptForm, modelSizeTranslator, modelSizeReTranslator, isOpenTranslator, isOpenReTranslator } from "@/components/entities/PromptForm"
 import { useNotificationStore } from "../../NotificationWidget"
 import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
-import { isOpenReTranslator, isOpenTranslator } from "@/components/entities/PromptForm/ui/PromptForm"
+
 import { CopyUUIDElement } from "./components/CopyUUIDElement"
+import { IPromptBody } from "./promptItem.props"
+
+
 
 export const PromptItem = ({ uuid }: { uuid: string }) => {
 
@@ -26,7 +29,8 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
         prompt: '',
         model: 'gpt-3.5-turbo',
         isOpen: 'private',
-        size: 'no memory'
+        size: 'no memory',
+        tuning: {}
     });
 
     function userDataCreate() {
@@ -42,6 +46,7 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
                 handleChange("model", res.model, true)
                 handleChange("size", modelSizeReTranslator(res.context_story_window), true)
                 handleChange("isOpen", isOpenReTranslator(res.is_open), true)
+                handleChange("tuning", res.tuning, true)
             }
         })
     }
@@ -55,14 +60,23 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
 
 
     function saveChangesHandler() {
-        const body = {
+        const body: IPromptBody = {
             "title": fields.title,
             "description": fields.description,
             "prompt": fields.prompt,
             "model": fields.model,
             "context_story_window": modelSizeTranslator(fields.size),
-            "is_open": isOpenTranslator(fields.isOpen)
+            "is_open": isOpenTranslator(fields.isOpen),
+            "tuning": {
+
+            }
         }
+        const tuningFields: (keyof IPromptBody["tuning"])[] = ["style", "size", "quality"];
+        tuningFields.forEach((field) => {
+            if (fields.tuning?.[field] && fields.tuning?.[field] !== "not installed") {
+                body.tuning[field] = fields.tuning[field];
+            }
+        });
         const url = `/prompts/${userId}/${uuid}`
         putResponse({ token: userToken, body: body, method: url })
         setNotification({ message: "Is saved", type: "success" })

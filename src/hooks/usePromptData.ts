@@ -1,4 +1,6 @@
-import { ModelOptions, ModelSize, isOpen } from '@/components/entities/PromptForm/ui/PromptForm';
+
+import { ModelTuning } from '@/components/entities/PromptForm';
+import { ModelOptions, ModelSize, isOpenType } from '@/components/entities/PromptForm/ui/promptForm.props';
 import { useState } from 'react';
 
 export interface PromptFormFields {
@@ -6,8 +8,9 @@ export interface PromptFormFields {
     description: string;
     prompt: string;
     model: ModelOptions;
-    isOpen: isOpen;
-    size: ModelSize
+    isOpen: isOpenType;
+    size: ModelSize;
+    tuning: ModelTuning;
 }
 
 

@@ -2,12 +2,13 @@ import { postResponse } from "@/api/restAPI"
 import { useDataStore } from "@/store/useDataStore"
 import { useTelegramStore } from "@/store/useTelegramStore"
 import { usePromptFormFields } from "@/hooks/usePromptData"
-import { modelSizeTranslator, PromptForm } from "@/components/entities/PromptForm"
+import { isOpenTranslator, modelSizeTranslator, PromptForm } from "@/components/entities/PromptForm"
 import { useRouter } from 'next/navigation'
 import { useNotificationStore } from "../../NotificationWidget"
 import { API_DOMAIN, API_VERSION } from "@/api/settings"
-import { isOpenTranslator } from "@/components/entities/PromptForm/ui/PromptForm"
+
 import { YMCOUNTER } from "@/const"
+import { IPromptBody } from "./promptItem.props"
 
 export const PromptItemCreate = () => {
 
@@ -25,18 +26,29 @@ export const PromptItemCreate = () => {
         model: 'gpt-4o',
         isOpen: 'open',
         size: 'no memory',
+        tuning: {}
     });
 
     function saveChangesHandler() {
 
-        const body = {
+        const body: IPromptBody = {
             "title": fields.title,
             "description": fields.description,
             "prompt": fields.prompt,
             "model": fields.model,
+            "context_story_window": modelSizeTranslator(fields.size),
             "is_open": isOpenTranslator(fields.isOpen),
-            "context_story_window": modelSizeTranslator(fields.size)
+            "tuning": {
+
+            }
         }
+        const tuningFields: (keyof IPromptBody["tuning"])[] = ["style", "size", "quality"];
+        tuningFields.forEach(field => {
+            if (fields.tuning?.[field] && fields.tuning?.[field] !== "not installed") {
+                body.tuning[field] = fields.tuning[field];
+            }
+        });
+
         const url = `${API_DOMAIN}${API_VERSION}/prompts/${userId}`
         postResponse({ token: userToken, body: body, method: url }).then((res) => {
             if (res?.error) {
