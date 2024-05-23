@@ -86,10 +86,9 @@ export async function patchResponse({ token, body, method }: IAPIPost) {
 
 
 export async function deleteResponse({ token, method }: IAPI) {
-  const url = API_DOMAIN + API_VERSION + method;
   const headers = createHeaders(token)
   try {
-    const response = await axios.delete(url, { headers });
+    const response = await axios.delete(method, { headers });
     return response;
   } catch (error) {
     return raiseAxiosError(error)

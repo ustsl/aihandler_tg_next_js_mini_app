@@ -13,6 +13,7 @@ import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
 
 import { CopyUUIDElement } from "./components/CopyUUIDElement"
 import { IPromptBody } from "./promptItem.props"
+import { DeletePromptWidget } from "../../DeletePrompt"
 
 
 
@@ -108,6 +109,7 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
                         </GridBlock>
                     </ContainerWrapper>
                 }
+
 
 
             </GridBlock>

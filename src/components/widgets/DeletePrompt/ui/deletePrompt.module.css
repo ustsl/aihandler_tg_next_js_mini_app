@@ -1,0 +1,10 @@
+.block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,1 @@
+export { DeletePromptWidget } from "./ui/DeletePrompt";
