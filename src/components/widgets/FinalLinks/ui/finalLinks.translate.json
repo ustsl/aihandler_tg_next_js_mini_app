@@ -1,0 +1,17 @@
+{
+    "return": {
+        "en": "Return to telegram chat",
+        "ru": "Вернуться в чат в Telegram",
+        "tr": "Telegram sohbetine dön"
+    },
+    "writeToDeveloper": {
+        "en": "Write to Developer",
+        "ru": "Написать разработчику",
+        "tr": "Geliştiriciye yaz"
+    },
+    "readInstructions": {
+        "en": "Read instructions",
+        "ru": "Прочитать инструкции",
+        "tr": "Talimatları oku"
+    }
+}

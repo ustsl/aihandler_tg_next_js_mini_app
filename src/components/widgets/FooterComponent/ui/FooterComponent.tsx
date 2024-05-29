@@ -2,7 +2,11 @@ import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
 import styles from './footerComponent.module.css'
 import { CardBlock } from '@/components/shared/CardBlock'
 
+
 export const FooterComponent = () => {
+
+
+
     return (
         <ContainerWrapper>
             <footer className={styles.footer}>

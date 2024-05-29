@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
 
     const [isLoad, setIsLoad] = useState(false);
-    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt } = useDataStore((state: any) => state);
+    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt, setUserLanguage } = useDataStore((state: any) => state);
 
 
     const { userId } = useTelegramStore((state: any) => state)
@@ -20,6 +20,7 @@ export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
             setUserToken(data?.token?.token)
             setUserBalance(parseFloat(data?.accounts?.balance))
             setUserCurrentPrompt(data?.settings?.prompt_id)
+            setUserLanguage(data?.settings?.language)
         })
     }
 

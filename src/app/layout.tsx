@@ -15,6 +15,7 @@ import { FlexWrapper } from "@/components/shared/FlexWrapper";
 import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { ScriptsBlock } from "@/components/shared/ScriptsBlock";
+import { FinalLinks } from "@/components/widgets/FinalLinks/ui/FinalLinks";
 
 
 
@@ -54,13 +55,7 @@ export default function RootLayout({
               <HeaderComponent />
               {children}
               <FooterComponent />
-              <ContainerWrapper>
-                <FlexWrapper>
-                  <CloseButton />
-                  <MiniButtonLinkComponent href="https://t.me/ustsl" text="Write to Developer" />
-                  <MiniButtonLinkComponent href="https://imvo.site/faq" text="Read instructions" />
-                </FlexWrapper>
-              </ContainerWrapper>
+              <FinalLinks />
             </GridBlock>
           </DataWrapper>
         </TelegramWrapper>

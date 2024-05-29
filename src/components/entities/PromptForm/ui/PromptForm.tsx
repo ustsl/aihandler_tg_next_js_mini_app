@@ -12,6 +12,7 @@ import {
     isOpenOptions, modelOptions, modelSizeOptions,
     tuningQualityOptions, tuningSizeOptions, tuningStyleOptions
 } from "./promptFieldOptions"
+import { useDataStore } from "@/store/useDataStore"
 
 
 
@@ -19,23 +20,28 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
     handleChange: (name: string, e: any) => void, fields: any, saveChangesHandler: () => void, isChanged: boolean
 }) => {
 
+    const { userLanguage } = useDataStore((state: any) => state);
+
+
     return (
         <GridBlock gridSize="XS">
             <ContainerWrapper>
                 <GridBlock gridSize="S">
-                    <InputElement placeholder={"Choose unique name"} label={titleQuestion}
+                    <InputElement placeholder={"Choose unique name"} label={titleQuestion(userLanguage)}
                         name={"Choose unique name"} value={fields.title}
                         onChange={(e: any) => handleChange("title", e.target.value)} />
                     <TextAreaElement
-                        label={descriptionQuestion}
+                        label={descriptionQuestion(userLanguage)}
                         value={fields.description}
                         rows={2}
                         cols={1}
                         placeholder="Choose description"
                         onChange={(e: any) => handleChange("description", e.target.value)} />
-                    <TextAreaElement placeholder={"Create Prompt"} label={promptQuestion} value={fields.prompt} rows={10} cols={1}
+                    <TextAreaElement placeholder={"Create Prompt"}
+                        label={promptQuestion(userLanguage)} value={fields.prompt} rows={10} cols={1}
                         onChange={(e: any) => handleChange("prompt", e.target.value)} />
-                    <DropdownElement options={modelOptions} selectedValue={fields.model} label={modelQuestion}
+                    <DropdownElement options={modelOptions} selectedValue={fields.model}
+                        label={modelQuestion(userLanguage)}
                         onChange={(e: any) => handleChange("model", e.target.value)} />
                     {
                         fields.model === 'dall-e-3' &&
@@ -43,7 +49,7 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
                             <DropdownElement
                                 options={tuningStyleOptions}
                                 selectedValue={fields.tuning?.style}
-                                label={styleQuestion}
+                                label={styleQuestion(userLanguage)}
                                 onChange={(e) => {
                                     const updatedTuning = {
                                         ...fields.tuning,
@@ -53,7 +59,7 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
                                 }}
                             />
 
-                            <DropdownElement options={tuningSizeOptions} selectedValue={fields.tuning?.size} label={sizeQuestion}
+                            <DropdownElement options={tuningSizeOptions} selectedValue={fields.tuning?.size} label={sizeQuestion(userLanguage)}
                                 onChange={(e) => {
                                     const updatedTuning = {
                                         ...fields.tuning,
@@ -61,7 +67,8 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
                                     };
                                     handleChange("tuning", updatedTuning);
                                 }} />
-                            <DropdownElement options={tuningQualityOptions} selectedValue={fields.tuning?.quality} label={qualityQuestion}
+                            <DropdownElement options={tuningQualityOptions} selectedValue={fields.tuning?.quality}
+                                label={qualityQuestion(userLanguage)}
                                 onChange={(e) => {
                                     const updatedTuning = {
                                         ...fields.tuning,
@@ -71,9 +78,11 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
                                 }} />
                         </>
                     }
-                    <DropdownElement options={modelSizeOptions} selectedValue={fields.size} label={memoryQuestion}
+                    <DropdownElement options={modelSizeOptions} selectedValue={fields.size}
+                        label={memoryQuestion(userLanguage)}
                         onChange={(e: any) => handleChange("size", e.target.value)} />
-                    <DropdownElement options={isOpenOptions} selectedValue={fields.isOpen} label={isOpenQuestion}
+                    <DropdownElement options={isOpenOptions} selectedValue={fields.isOpen}
+                        label={isOpenQuestion(userLanguage)}
                         onChange={(e: any) => handleChange("isOpen", e.target.value)} />
 
                 </GridBlock>

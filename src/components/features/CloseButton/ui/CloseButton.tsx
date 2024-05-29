@@ -3,7 +3,7 @@
 import { useTelegramStore } from "@/store/useTelegramStore"
 import { MiniButtonComponent } from '@/components/shared/MiniButtonComponent'
 
-export const CloseButton = () => {
+export const CloseButton = ({ text }: { text: string }) => {
     const { tg } = useTelegramStore((state: any) => state)
 
     function onClick() {
@@ -12,6 +12,6 @@ export const CloseButton = () => {
 
     return (
 
-        <MiniButtonComponent text="Return to telegram chat" onClick={onClick} />
+        <MiniButtonComponent text={text} onClick={onClick} />
     )
 }
