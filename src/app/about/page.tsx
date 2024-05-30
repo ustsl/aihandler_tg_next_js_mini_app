@@ -1,8 +1,18 @@
+'use client'
+
+import translate from './page.translate.json'
+
+
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { GridBlock } from "@/components/shared/GridBlock";
 import { TitleBlock } from "@/components/shared/TitleElement";
+import { useDataStore } from '@/store/useDataStore';
+import { baseLanguages } from '@/types/baseTypes';
 
-export default async function Page() {
+export default function Page() {
+
+  const { userLanguage } = useDataStore((state: any) => state);
+  const translation = translate[`${userLanguage as baseLanguages}`]
 
   return (
 
@@ -11,10 +21,10 @@ export default async function Page() {
 
         <TitleBlock tag="h1" text="AIHandler" />
 
-        <p>Introducing AIHandler, your ultimate tool for creating GPT prompts with ease and efficiency! Whether you are looking to enhance your Telegram bot, integrate prompts into your own applications via API, or even monetize your creativity by sharing prompts with others people.
+        <p>{translation.start}
         </p>
 
-        <TitleBlock tag="h2" text="With AIHandler, you can:" />
+        <div dangerouslySetInnerHTML={{ __html: translation.text }} />
 
         <p><b>Create Custom Prompts:</b> Generate prompts tailored to your specific needs and preferences. Craft engaging conversation starters, thought-provoking questions, or informative prompts with just a few clicks.</p>
 
@@ -24,7 +34,6 @@ export default async function Page() {
         <p><b>Flexible Usage:</b> Whether you are a developer, entrepreneur, or content creator, AIHandler offers flexibility in how you use and distribute prompts. From personal projects to commercial applications, AIHandler empowers you to leverage the power of GPT prompts in various ways.</p>
 
         <p><b>User-Friendly Interface:</b> Navigate through AIHandler intuitive interface with ease. Access advanced features for prompt customization, track usage and earnings, and manage your prompt library effortlessly.</p>
-
 
         <p>Unlock the full potential of GPT prompts with AIHandler and revolutionize the way you engage with your audience, enhance your applications, and monetize your creativity!</p>
       </GridBlock>

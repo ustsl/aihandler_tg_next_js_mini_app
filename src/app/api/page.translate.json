@@ -1,0 +1,17 @@
+{
+    "en": {
+        "title": "About",
+        "d1": "Easily use the service not only inside the telegram interface, but also in your services using a simple API interface.",
+        "d2": "The API works through a post-request, an example of which is indicated in the contents of each prompt."
+    },
+    "tr": {
+        "title": "Hakkında",
+        "d1": "Hizmeti yalnızca Telegram arayüzünde değil, aynı zamanda basit bir API arayüzü kullanarak kendi hizmetlerinizde de kolayca kullanın.",
+        "d2": "API, her istemin içeriğinde belirtilen bir örnek ile post-isteği üzerinden çalışır."
+    },
+    "ru": {
+        "title": "О приложении",
+        "d1": "Легко используйте сервис не только внутри интерфейса Telegram, но и в ваших сервисах, используя простой интерфейс API.",
+        "d2": "API работает через post-запрос, пример которого указан в содержимом каждой подсказки."
+    }
+}

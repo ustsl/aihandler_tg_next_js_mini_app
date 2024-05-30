@@ -1,5 +1,7 @@
 'use client'
 
+import translate from './paymentWidget.translate.json'
+
 import styles from './paymentWidget.module.css'
 
 import { FlexWrapper } from "@/components/shared/FlexWrapper"
@@ -10,8 +12,14 @@ import { useState } from "react"
 import { cryptoCloudResponse, paymentServiceResponse } from "./queries"
 import { useTelegramStore } from "@/store/useTelegramStore"
 import { YMCOUNTER } from '@/const'
+import { useDataStore } from '@/store/useDataStore'
+import { baseLanguages } from '@/types/baseTypes'
 
 export const PaymentWidget = () => {
+
+    const { userLanguage } = useDataStore((state: any) => state);
+    const translation = translate[`${userLanguage as baseLanguages}`]
+
     const router = useRouter()
 
     const [amount, setAmount] = useState<number>(30)
@@ -27,7 +35,7 @@ export const PaymentWidget = () => {
                 const invoiceId = response.data.invoice_id as string
                 const paymentServiceResult = await paymentServiceResponse(amount, invoiceId, `${userId}`)
                 if (paymentServiceResult && paymentServiceResult.status == 200) {
-                    setNotification({ message: "Payment processed successfully." });
+                    setNotification({ message: translation.success });
                     window.ym(YMCOUNTER, 'reachGoal', 'startPayment');
                     window.dataLayer.push({
                         'event': 'startPayment',
@@ -39,7 +47,7 @@ export const PaymentWidget = () => {
 
         } catch (error) {
             console.log(error)
-            setNotification({ message: "Payment processing failed. Please try again later." });
+            setNotification({ message: translation.error });
         }
     }
 
@@ -47,10 +55,10 @@ export const PaymentWidget = () => {
         <form onSubmit={handlePaymentAuth} >
             <FlexWrapper>
                 <InputElement
-                    label="Enter payment amount (USD)"
+                    label={translation.enter}
                     value={amount}
-                    onChange={(e) => setAmount(e.target.value)} placeholder={"100"} name={"Amount"} />
-                <button className={styles.button}>Start the payment process</button>
+                    onChange={(e) => setAmount(e.target.value)} placeholder={"100"} name={translation.field} />
+                <button className={styles.button}>{translation.button}</button>
             </FlexWrapper>
         </form>
     )

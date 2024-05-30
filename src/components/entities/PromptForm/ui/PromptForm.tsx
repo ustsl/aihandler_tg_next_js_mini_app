@@ -1,3 +1,5 @@
+import translate from './promptField.translate.json'
+
 import { ButtonComponent } from "@/components/shared/ButtonComponent"
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper"
 import { DropdownElement } from "@/components/shared/DropdownElement"
@@ -13,6 +15,7 @@ import {
     tuningQualityOptions, tuningSizeOptions, tuningStyleOptions
 } from "./promptFieldOptions"
 import { useDataStore } from "@/store/useDataStore"
+import { baseLanguages } from '@/types/baseTypes'
 
 
 
@@ -21,23 +24,24 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
 }) => {
 
     const { userLanguage } = useDataStore((state: any) => state);
+    const translation = translate[`${userLanguage as baseLanguages}`]
 
 
     return (
         <GridBlock gridSize="XS">
             <ContainerWrapper>
                 <GridBlock gridSize="S">
-                    <InputElement placeholder={"Choose unique name"} label={titleQuestion(userLanguage)}
-                        name={"Choose unique name"} value={fields.title}
+                    <InputElement placeholder={translation.titleQuestion.title} label={titleQuestion(userLanguage)}
+                        name={translation.titleQuestion.title} value={fields.title}
                         onChange={(e: any) => handleChange("title", e.target.value)} />
                     <TextAreaElement
                         label={descriptionQuestion(userLanguage)}
                         value={fields.description}
                         rows={2}
                         cols={1}
-                        placeholder="Choose description"
+                        placeholder={translation.descriptionQuestion.title}
                         onChange={(e: any) => handleChange("description", e.target.value)} />
-                    <TextAreaElement placeholder={"Create Prompt"}
+                    <TextAreaElement placeholder={translation.promptQuestion.title}
                         label={promptQuestion(userLanguage)} value={fields.prompt} rows={10} cols={1}
                         onChange={(e: any) => handleChange("prompt", e.target.value)} />
                     <DropdownElement options={modelOptions} selectedValue={fields.model}
@@ -88,7 +92,7 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
                 </GridBlock>
             </ContainerWrapper>
             {isChanged &&
-                <ContainerWrapper><ButtonComponent text={'Save'} onClick={saveChangesHandler} /></ContainerWrapper>
+                <ContainerWrapper><ButtonComponent text={translation.saveButton} onClick={saveChangesHandler} /></ContainerWrapper>
             }
         </GridBlock>
     )

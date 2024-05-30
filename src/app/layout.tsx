@@ -47,8 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ScriptsBlock gtmList={'GTM-5Q75X56W'} />
+
       <body className={inter.className}>
+        <ScriptsBlock gtmList={'GTM-5Q75X56W'} />
         <TelegramWrapper>
           <DataWrapper>
             <GridBlock gridSize="XS">

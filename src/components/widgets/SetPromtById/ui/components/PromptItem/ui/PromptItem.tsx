@@ -1,5 +1,7 @@
 'use client'
 
+import translate from './promptItem.translate.json'
+
 import { getBaseQuery, putResponse } from "@/api/restAPI";
 import { TOKEN } from "@/api/settings";
 import { ButtonComponent } from "@/components/shared/ButtonComponent";
@@ -8,11 +10,17 @@ import { TitleBlock } from "@/components/shared/TitleElement";
 import { useNotificationStore } from "@/components/widgets/NotificationWidget";
 import { useDataStore } from "@/store/useDataStore";
 import { useTelegramStore } from "@/store/useTelegramStore";
+import { baseLanguages } from '@/types/baseTypes';
 import { useEffect, useState } from "react";
 
 
 
 export const PromptItem = ({ uuid }: { uuid: string }) => {
+
+
+    const { userLanguage } = useDataStore((state: any) => state);
+
+    const translation = translate[`${userLanguage as baseLanguages}`]
 
     const [title, setTitle] = useState('')
 
@@ -42,13 +50,12 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
         putResponse({ token: TOKEN as string, body: body, method: url }).then((res) => {
             console.log(res)
         })
-        setNotification({ message: "Prompt was install in telegram chat", type: "success" })
+        setNotification({ message: translation.success, type: "success" })
     }
 
 
     useEffect(() => {
         userDataCreate()
-        console.log(123123)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [uuid]);
 
@@ -57,9 +64,9 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
             {title ?
                 <>
                     <TitleBlock tag="h2" text={title} />
-                    <ButtonComponent text={'Set prompt in telegram chat'} onClick={putChangesHandler} />
+                    <ButtonComponent text={translation.button} onClick={putChangesHandler} />
                 </>
-                : <p>Prompt not found</p>}
+                : <p>{translation.notFound}</p>}
         </GridBlock>
     )
 }

@@ -1,0 +1,23 @@
+{
+    "en": {
+        "button": "Delete prompt",
+        "success": "Prompt was deleted",
+        "error": "Unknown error",
+        "question": "Are you sure?",
+        "no": "No, sure!"
+    },
+    "tr": {
+        "button": "İpucunu sil",
+        "success": "İpucu silindi",
+        "error": "Bilinmeyen hata",
+        "question": "Emin misiniz?",
+        "no": "Hayır, eminim!"
+    },
+    "ru": {
+        "button": "Удалить подсказку",
+        "success": "Подсказка удалена",
+        "error": "Неизвестная ошибка",
+        "question": "Вы уверены?",
+        "no": "Нет, конечно!"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "en": {
+        "about": {
+            "title": "About",
+            "description": "About the application and manual for new users."
+        },
+        "api": {
+            "title": "API",
+            "description": "Using the API service outside the Telegram interface."
+        }
+    },
+    "tr": {
+        "about": {
+            "title": "Hakkında",
+            "description": "Uygulama hakkında ve yeni kullanıcılar için kılavuz."
+        },
+        "api": {
+            "title": "API",
+            "description": "Telegram arayüzü dışında API hizmetini kullanma."
+        }
+    },
+    "ru": {
+        "about": {
+            "title": "О приложении",
+            "description": "О приложении и руководство для новых пользователей."
+        },
+        "api": {
+            "title": "API",
+            "description": "Использование API сервиса вне интерфейса Telegram."
+        }
+    }
+}

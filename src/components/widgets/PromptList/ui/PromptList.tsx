@@ -1,6 +1,7 @@
 'use client'
 
 import styles from './promptList.module.css'
+import translate from './promptList.translate.json'
 
 import { useEffect, useState } from 'react';
 
@@ -13,9 +14,15 @@ import { SearchBlock } from './components/SearchBlock'
 import { ItemsBlock } from './components/ItemsBlock';
 import { Pagination } from './components/Pagination';
 import { QuestionDataWrapper } from '@/components/shared/QuestionDataWrapper';
+import { baseLanguages } from '@/types/baseTypes';
 
 
 export const PromptList = () => {
+
+    const { userLanguage } = useDataStore((state: any) => state);
+
+    const translation = translate[`${userLanguage as baseLanguages}`]
+
 
     const [results, setResults] = useState<any>([])
     const [offset, setOffset] = useState<number>(0)
@@ -48,21 +55,20 @@ export const PromptList = () => {
     return (
         <ContainerWrapper>
             <section className={styles.block}>
-                <QuestionDataWrapper text={'A list of available prompts is displayed here. Go to any of them to edit, get an API link, or select as a chat preset.'}>
+                <QuestionDataWrapper text={translation.hint}>
                     <h2 className={styles.hint}>
-                        Available prompts
+                        {translation.title}
                     </h2>
                 </QuestionDataWrapper>
-                <SearchBlock searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                <SearchBlock searchQuery={searchQuery} setSearchQuery={setSearchQuery} text={translation.search} />
                 {isLoad &&
                     results.length > 0 ?
 
                     <ItemsBlock results={results} />
                     :
-                    <p>No available prompts. Create your first prompt</p>
-
+                    <p>{translation.noResult}</p>
                 }
-                <Pagination length={results.length} offset={offset} limit={limit} setOffset={setOffset} />
+                <Pagination length={results.length} offset={offset} limit={limit} setOffset={setOffset} next={translation.next} prev={translation.prev} />
             </section>
         </ContainerWrapper >
     )

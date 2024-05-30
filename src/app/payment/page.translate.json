@@ -1,0 +1,17 @@
+{
+    "en": {
+        "title": "Payment",
+        "d1": "We use cryptoprocessing as a reliable payment method for users in any country.",
+        "d2": "To pay, enter the equivalent of a dollar and confirm the entered data. After payment you will be transferred to the provider's page."
+    },
+    "tr": {
+        "title": "Ödeme",
+        "d1": "Kullanıcılar için güvenilir bir ödeme yöntemi olarak kripto işlemi kullanıyoruz.",
+        "d2": "Ödeme yapmak için bir doların eşdeğerini girin ve girilen verileri onaylayın. Ödeme yapıldıktan sonra sağlayıcının sayfasına yönlendirileceksiniz."
+    },
+    "ru": {
+        "title": "Оплата",
+        "d1": "Мы используем криптопроцессинг в качестве надежного способа оплаты для пользователей в любой стране.",
+        "d2": "Чтобы оплатить, введите эквивалент доллара и подтвердите введенные данные. После оплаты вы будете перенаправлены на страницу провайдера."
+    }
+}

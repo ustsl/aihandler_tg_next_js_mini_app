@@ -1,3 +1,7 @@
+'use client'
+
+import translate from './promptItem.translate.json'
+
 import { getBaseQuery, putResponse } from "@/api/restAPI"
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper"
 import { GridBlock } from "@/components/shared/GridBlock"
@@ -13,11 +17,13 @@ import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
 
 import { CopyUUIDElement } from "./components/CopyUUIDElement"
 import { IPromptBody } from "./promptItem.props"
-import { DeletePromptWidget } from "../../DeletePrompt"
-
+import { baseLanguages } from "@/types/baseTypes"
 
 
 export const PromptItem = ({ uuid }: { uuid: string }) => {
+
+    const { userLanguage } = useDataStore((state: any) => state);
+    const translation = translate[`${userLanguage as baseLanguages}`]
 
     const { setNotification } = useNotificationStore((state: any) => state);
     const { userToken } = useDataStore((state: any) => state);
@@ -92,8 +98,8 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
 
                 <ContainerWrapper>
                     <GridBlock gridSize='XS'>
-                        <QuestionDataWrapper text={"Use the example of this request to directly use your prompt in your own integrations outside of Telegram chat."}>
-                            <TitleBlock tag={"h2"} text={"API-Query example"} />
+                        <QuestionDataWrapper text={translation.api.hint}>
+                            <TitleBlock tag={"h2"} text={translation.api.title} />
                         </QuestionDataWrapper>
                         <APIQueryElement tg={userId} userToken={userToken} uuid={uuid} />
 
@@ -102,8 +108,8 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
                 {isOpenTranslator(fields.isOpen) &&
                     <ContainerWrapper>
                         <GridBlock gridSize='XS'>
-                            <QuestionDataWrapper text={"Publish this ID on your social networks, or share it personally with other users so that they can use your prompt."}>
-                                <TitleBlock tag={"h2"} text={"Share prompt"} />
+                            <QuestionDataWrapper text={translation.share.hint}>
+                                <TitleBlock tag={"h2"} text={translation.share.title} />
                             </QuestionDataWrapper>
                             <CopyUUIDElement uuid={uuid} />
                         </GridBlock>

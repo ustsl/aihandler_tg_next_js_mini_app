@@ -1,0 +1,26 @@
+{
+    "en": {
+        "next": "next",
+        "prev": "prev",
+        "title": "Available prompts",
+        "hint": "A list of available prompts is displayed here. Go to any of them to edit, get an API link, or select as a chat preset",
+        "search": "Prompt search panel",
+        "noResult": "No available prompts. Create your first prompt"
+    },
+    "tr": {
+        "next": "sonraki",
+        "prev": "önceki",
+        "title": "Mevcut istemler",
+        "hint": "Mevcut istemlerin bir listesi burada görüntülenir. Düzenlemek, bir API bağlantısı almak veya bir sohbet ön ayarı olarak seçmek için herhangi birine gidin",
+        "search": "İstem arama paneli",
+        "noResult": "Mevcut istem yok. İlk isteminizi oluşturun"
+    },
+    "ru": {
+        "next": "еще",
+        "prev": "вернуться",
+        "title": "Доступные подсказки",
+        "hint": "Здесь отображается список доступных подсказок. Перейдите к любой из них, чтобы отредактировать, получить ссылку API или выбрать в качестве предустановки для чата",
+        "search": "Панель поиска подсказок",
+        "noResult": "Нет доступных подсказок. Создайте свою первую подсказку"
+    }
+}

@@ -5,10 +5,11 @@ import { useState, useRef } from "react";
 interface ISearchQuery {
     searchQuery: string
     setSearchQuery: (data: string) => void
+    text: string
 }
 
 
-export const SearchBlock = ({ searchQuery, setSearchQuery }: ISearchQuery) => {
+export const SearchBlock = ({ searchQuery, setSearchQuery, text }: ISearchQuery) => {
     const [localQuery, setLocalQuery] = useState(searchQuery)
 
     const debounceRef = useRef(debounce((value: string) => {
@@ -23,7 +24,7 @@ export const SearchBlock = ({ searchQuery, setSearchQuery }: ISearchQuery) => {
 
     return (
         <InputElement
-            placeholder="Prompt search panel"
+            placeholder={text}
             name="text"
             value={localQuery}
             onChange={handleInputChange}

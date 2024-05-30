@@ -3,56 +3,56 @@ import translate from './promptField.translate.json'
 import { PromptDataGenerator } from "@/components/features/PromptDataGenerator"
 import { baseLanguages } from "@/types/baseTypes"
 
-
 export const titleQuestion = (lang: baseLanguages) =>
-    PromptDataGenerator(translate.titleQuestion.description[`${lang}`],
-        translate.titleQuestion.title[`${lang}`])
-
+    PromptDataGenerator(
+        translate[`${lang}`].titleQuestion.description,
+        translate[`${lang}`].titleQuestion.title
+    );
 
 export const descriptionQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.descriptionQuestion.description[lang],
-        translate.descriptionQuestion.title[lang]
+        translate[`${lang}`].descriptionQuestion.description,
+        translate[`${lang}`].descriptionQuestion.title
     );
 
 export const promptQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.promptQuestion.description[lang],
-        translate.promptQuestion.title[lang]
+        translate[`${lang}`].promptQuestion.description,
+        translate[`${lang}`].promptQuestion.title
     );
 
 export const modelQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.modelQuestion.description[lang],
-        translate.modelQuestion.title[lang]
+        translate[`${lang}`].modelQuestion.description,
+        translate[`${lang}`].modelQuestion.title
     );
 
 export const styleQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.styleQuestion.description[lang],
-        translate.styleQuestion.title[lang]
+        translate[`${lang}`].styleQuestion.description,
+        translate[`${lang}`].styleQuestion.title
     );
 
 export const qualityQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.qualityQuestion.description[lang],
-        translate.qualityQuestion.title[lang]
+        translate[`${lang}`].qualityQuestion.description,
+        translate[`${lang}`].qualityQuestion.title
     );
 
 export const sizeQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.sizeQuestion.description[lang],
-        translate.sizeQuestion.title[lang]
+        translate[`${lang}`].sizeQuestion.description,
+        translate[`${lang}`].sizeQuestion.title
     );
 
 export const memoryQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.memoryQuestion.description[lang],
-        translate.memoryQuestion.title[lang]
+        translate[`${lang}`].memoryQuestion.description,
+        translate[`${lang}`].memoryQuestion.title
     );
 
 export const isOpenQuestion = (lang: baseLanguages) =>
     PromptDataGenerator(
-        translate.isOpenQuestion.description[lang],
-        translate.isOpenQuestion.title[lang]
+        translate[`${lang}`].isOpenQuestion.description,
+        translate[`${lang}`].isOpenQuestion.title
     );

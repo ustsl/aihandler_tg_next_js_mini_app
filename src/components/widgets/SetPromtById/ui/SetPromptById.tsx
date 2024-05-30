@@ -1,5 +1,7 @@
 'use client'
 
+import translate from './setPromptById.translate.json'
+
 import { PromptDataGenerator } from "@/components/features/PromptDataGenerator"
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper"
 import { GridBlock } from "@/components/shared/GridBlock"
@@ -7,8 +9,13 @@ import { InputElement } from "@/components/shared/InputElement"
 import { debounce } from "@/utils/debounce"
 import { useRef, useState } from "react"
 import { PromptItem } from "./components/PromptItem"
+import { useDataStore } from "@/store/useDataStore"
+import { baseLanguages } from '@/types/baseTypes'
 
 export const SetPromptById = () => {
+
+    const { userLanguage } = useDataStore((state: any) => state);
+    const translation = translate[`${userLanguage as baseLanguages}`]
 
     const [uuid, setUuid] = useState('')
     const [localUuid, setLocalUuid] = useState(uuid)
@@ -23,17 +30,16 @@ export const SetPromptById = () => {
         debounceRef.current(value);
     }
 
-    const titleQuestion = PromptDataGenerator('Paste the copied ID. If the prompt is open and exists, you will be able to install it in the chat and use it.',
-        "Insert the prompt ID")
+    const titleQuestion = PromptDataGenerator(translation.hint,
+        translation.title)
 
 
     return (
         <ContainerWrapper>
             <GridBlock gridSize="S">
-                <InputElement placeholder={"Insert the prompt ID"} label={titleQuestion} name={"Insert the prompt ID"} value={localUuid}
+                <InputElement placeholder={translation.title} label={titleQuestion} name={translation.title} value={localUuid}
                     onChange={(e: any) => handleInputChange(e.target.value)} />
                 {uuid && <PromptItem uuid={uuid} />}
-
             </GridBlock>
         </ContainerWrapper>
     )

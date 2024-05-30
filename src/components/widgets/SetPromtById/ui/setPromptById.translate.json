@@ -1,0 +1,14 @@
+{
+    "en": {
+        "title": "Insert the prompt ID",
+        "hint": "Paste the copied ID. If the prompt is open and exists, you will be able to install it in the chat and use it."
+    },
+    "tr": {
+        "title": "İstem Kimliğini Girin",
+        "hint": "Kopyalanan kimliği yapıştırın. İstem açık ve mevcutsa, onu sohbette kurabilir ve kullanabilirsiniz."
+    },
+    "ru": {
+        "title": "Вставьте ID подсказки",
+        "hint": "Вставьте скопированный ID. Если подсказка открыта и существует, вы сможете установить её в чате и использовать."
+    }
+}

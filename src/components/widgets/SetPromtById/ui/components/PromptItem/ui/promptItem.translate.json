@@ -1,0 +1,17 @@
+{
+    "en": {
+        "success": "Prompt was installed in Telegram chat",
+        "button": "Set prompt in Telegram chat",
+        "notFound": "Prompt not found"
+    },
+    "tr": {
+        "success": "İstem Telegram sohbetine kuruldu",
+        "button": "Telegram sohbetine istem ayarla",
+        "notFound": "İstem bulunamadı"
+    },
+    "ru": {
+        "success": "Подсказка установлена в чате Telegram",
+        "button": "Установить подсказку в чате Telegram",
+        "notFound": "Подсказка не найдена"
+    }
+}

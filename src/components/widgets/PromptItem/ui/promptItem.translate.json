@@ -1,0 +1,32 @@
+{
+    "en": {
+        "api": {
+            "title": "API-Query example",
+            "hint": "Use the example of this request to directly use your prompt in your own integrations outside of Telegram chat."
+        },
+        "share": {
+            "title": "Share prompt",
+            "hint": "Publish this ID on your social networks, or share it personally with other users so that they can use your prompt."
+        }
+    },
+    "tr": {
+        "api": {
+            "title": "API-Sorgu örneği",
+            "hint": "Bu isteğin örneğini kullanarak, Telegram sohbeti dışında kendi entegrasyonlarınızda ipucunuzu doğrudan kullanın."
+        },
+        "share": {
+            "title": "İpucunu paylaş",
+            "hint": "Bu kimliği sosyal ağlarınızda yayınlayın veya diğer kullanıcılarla kişisel olarak paylaşın, böylece ipucunuzu kullanabilirler."
+        }
+    },
+    "ru": {
+        "api": {
+            "title": "Пример API-запроса",
+            "hint": "Используйте пример этого запроса, чтобы напрямую использовать свою подсказку в собственных интеграциях вне чата Telegram."
+        },
+        "share": {
+            "title": "Поделиться подсказкой",
+            "hint": "Опубликуйте этот ID в своих социальных сетях или поделитесь им лично с другими пользователями, чтобы они могли использовать вашу подсказку."
+        }
+    }
+}

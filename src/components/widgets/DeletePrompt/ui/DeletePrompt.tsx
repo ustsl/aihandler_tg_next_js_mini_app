@@ -1,3 +1,5 @@
+import translate from './deletePrompt.translate.json'
+
 import { MiniButtonComponent } from '@/components/shared/MiniButtonComponent'
 import styles from './deletePrompt.module.css'
 
@@ -10,8 +12,12 @@ import { useTelegramStore } from '@/store/useTelegramStore';
 import { useNotificationStore } from '../../NotificationWidget';
 import { useRouter } from 'next/navigation';
 import { deleteResponse } from '@/api/restAPI';
+import { baseLanguages } from '@/types/baseTypes';
 
 export const DeletePromptWidget = ({ uuid }: { uuid: string }) => {
+
+    const { userLanguage } = useDataStore((state: any) => state);
+    const translation = translate[`${userLanguage as baseLanguages}`]
 
     const { isOpen, openModal, closeModal } = useModal();
     const router = useRouter();
@@ -26,10 +32,10 @@ export const DeletePromptWidget = ({ uuid }: { uuid: string }) => {
         console.log(url)
         deleteResponse({ token: userToken, method: url }).then((res) => {
             if (res?.status === 200) {
-                setNotification({ message: "Prompt was deleted", type: "success" })
+                setNotification({ message: translation.success, type: "success" })
                 router.push(`/`)
             } else {
-                setNotification({ message: "Unknown error", type: "error" })
+                setNotification({ message: translation.error, type: "error" })
             }
         })
     }
@@ -38,16 +44,15 @@ export const DeletePromptWidget = ({ uuid }: { uuid: string }) => {
     return (
         <ContainerWrapper>
             <div className={styles.block}>
-                <MiniButtonComponent text="Delete prompt" onClick={openModal} />
+                <MiniButtonComponent text={translation.button} onClick={openModal} />
             </div>
 
             <ModalComponent isOpen={isOpen} onClose={closeModal}>
                 <>
-                    <TitleBlock tag='h4' text='Are you sure?' />
+                    <TitleBlock tag='h4' text={translation.question} />
                     <div className={styles.flex}>
-                        <MiniButtonComponent text="No" onClick={closeModal} />
-                        <MiniButtonComponent text="Delete prompt" onClick={() => deletePromptHandler(uuid)} />
-                        <MiniButtonComponent text="No, sure" onClick={closeModal} />
+                        <MiniButtonComponent text={translation.no} onClick={closeModal} />
+                        <MiniButtonComponent text={translation.button} onClick={() => deletePromptHandler(uuid)} />
                     </div>
                 </>
             </ModalComponent>

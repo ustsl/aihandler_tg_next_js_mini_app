@@ -1,110 +1,119 @@
 {
-    "titleQuestion": {
-        "title": {
-            "en": "Choose unique name",
-            "ru": "Выберите уникальное имя",
-            "tr": "Benzersiz bir isim seçin"
+    "en": {
+        "titleQuestion": {
+            "title": "Choose unique name",
+            "description": "Use a concise and clear name for comfortable navigation"
         },
-        "description": {
-            "en": "Use a concise and clear name for comfortable navigation",
-            "ru": "Используйте краткое и ясное имя для удобной навигации",
-            "tr": "Rahat gezinme için öz ve net bir isim kullanın"
-        }
+        "descriptionQuestion": {
+            "title": "Choose description",
+            "description": "The description of the prompt does not affect its functionality and serves as a navigation hint."
+        },
+        "promptQuestion": {
+            "title": "Create prompt",
+            "description": "Write detailed instructions. The prompt will act on it. For example, you can write: you are a translator into Turkish. Translate from any language into Turkish. Just return the translation."
+        },
+        "modelQuestion": {
+            "title": "Choose model",
+            "description": "The list of available models will be updated with both OpenAI models and models of third-party services"
+        },
+        "styleQuestion": {
+            "title": "Set additional image style",
+            "description": "In graphic prompts, an optional format allows you to define additional filters on the image, making it either more realistic or more vibrant."
+        },
+        "qualityQuestion": {
+            "title": "Set image quality",
+            "description": "Generating an image in a standard format is cheaper. If you need the highest possible quality, then choose HD."
+        },
+        "sizeQuestion": {
+            "title": "Set image size",
+            "description": "The image can be generated in one of three selected proportions and sizes."
+        },
+        "memoryQuestion": {
+            "title": "Choose memory size",
+            "description": "The higher the value, the more previous answers the AI remembers. But the higher the chance that the AI will respond less accurately, and also the higher the cost of use. If the task does not require a dynamic context, do not use memory storage. But it can be useful in complex prompts."
+        },
+        "isOpenQuestion": {
+            "title": "Access to prompt",
+            "description": "Private prompts can only be used within the context of working with your account. Open prompts are available to everyone. You will receive 10% of the funds in your account from the amount of their use."
+        },
+        "saveButton": "Save changes"
     },
-    "descriptionQuestion": {
-        "title": {
-            "en": "Choose description",
-            "ru": "Выберите описание",
-            "tr": "Açıklama seçin"
+    "ru": {
+        "titleQuestion": {
+            "title": "Выберите уникальное имя",
+            "description": "Используйте краткое и ясное имя для удобной навигации"
         },
-        "description": {
-            "en": "The description of the prompt does not affect its functionality and serves as a navigation hint.",
-            "ru": "Описание подсказки не влияет на ее функциональность и служит подсказкой по навигации.",
-            "tr": "İpucunun açıklaması işlevselliğini etkilemez ve bir gezinme ipucu olarak hizmet eder."
-        }
+        "descriptionQuestion": {
+            "title": "Выберите описание",
+            "description": "Описание подсказки не влияет на ее функциональность и служит подсказкой по навигации."
+        },
+        "promptQuestion": {
+            "title": "Создать подсказку",
+            "description": "Напишите подробные инструкции. Подсказка будет действовать на них. Например, вы можете написать: вы переводчик на турецкий язык. Переведите с любого языка на турецкий. Просто верните перевод."
+        },
+        "modelQuestion": {
+            "title": "Выберите модель",
+            "description": "Список доступных моделей будет обновляться как моделями OpenAI, так и моделями сторонних сервисов"
+        },
+        "styleQuestion": {
+            "title": "Установите дополнительный стиль изображения",
+            "description": "В графических подсказках дополнительный формат позволяет определить дополнительные фильтры на изображении, делая его либо более реалистичным, либо более ярким."
+        },
+        "qualityQuestion": {
+            "title": "Установите качество изображения",
+            "description": "Генерация изображения в стандартном формате дешевле. Если вам нужно наивысшее качество, выберите HD."
+        },
+        "sizeQuestion": {
+            "title": "Установите размер изображения",
+            "description": "Изображение можно сгенерировать в одном из трех выбранных пропорций и размеров."
+        },
+        "memoryQuestion": {
+            "title": "Выберите размер памяти",
+            "description": "Чем выше значение, тем больше предыдущих ответов запоминает ИИ. Но тем выше вероятность того, что ИИ будет отвечать менее точно, а также тем выше стоимость использования. Если задача не требует динамического контекста, не используйте хранилище памяти. Однако это может быть полезно в сложных подсказках."
+        },
+        "isOpenQuestion": {
+            "title": "Доступ к подсказке",
+            "description": "Частные подсказки могут использоваться только в контексте работы с вашей учетной записью. Открытые подсказки доступны всем. Вы получите 10% средств со своего счета от суммы их использования."
+        },
+        "saveButton": "Сохранить изменения"
     },
-    "promptQuestion": {
-        "title": {
-            "en": "Create prompt",
-            "ru": "Создать подсказку",
-            "tr": "İpucu oluştur"
+    "tr": {
+        "titleQuestion": {
+            "title": "Benzersiz bir isim seçin",
+            "description": "Rahat gezinme için öz ve net bir isim kullanın"
         },
-        "description": {
-            "en": "Write detailed instructions. The prompt will act on it. For example, you can write: you are a translator into Turkish. Translate from any language into Turkish. Just return the translation.",
-            "ru": "Напишите подробные инструкции. Подсказка будет действовать на них. Например, вы можете написать: вы переводчик на турецкий язык. Переведите с любого языка на турецкий. Просто верните перевод.",
-            "tr": "Detaylı talimatlar yazın. İpucu ona göre hareket edecek. Örneğin, şunu yazabilirsiniz: Türkçe'ye çevirmeniz gerekiyor. Herhangi bir dilden Türkçe'ye çevirin. Sadece çeviriyi geri verin."
-        }
-    },
-    "modelQuestion": {
-        "title": {
-            "en": "Choose model",
-            "ru": "Выберите модель",
-            "tr": "Model seçin"
+        "descriptionQuestion": {
+            "title": "Açıklama seçin",
+            "description": "İpucunun açıklaması işlevselliğini etkilemez ve bir gezinme ipucu olarak hizmet eder."
         },
-        "description": {
-            "en": "The list of available models will be updated with both OpenAI models and models of third-party services",
-            "ru": "Список доступных моделей будет обновляться как моделями OpenAI, так и моделями сторонних сервисов",
-            "tr": "Kullanılabilir modeller listesi, hem OpenAI modelleri hem de üçüncü taraf hizmetlerinin modelleri ile güncellenecektir"
-        }
-    },
-    "styleQuestion": {
-        "title": {
-            "en": "Set additional image style",
-            "ru": "Установите дополнительный стиль изображения",
-            "tr": "Ek görüntü stili ayarlayın"
+        "promptQuestion": {
+            "title": "İpucu oluştur",
+            "description": "Detaylı talimatlar yazın. İpucu ona göre hareket edecek. Örneğin, şunu yazabilirsiniz: Türkçe'ye çevirmeniz gerekiyor. Herhangi bir dilden Türkçe'ye çevirin. Sadece çeviriyi geri verin."
         },
-        "description": {
-            "en": "In graphic prompts, an optional format allows you to define additional filters on the image, making it either more realistic or more vibrant.",
-            "ru": "В графических подсказках дополнительный формат позволяет определить дополнительные фильтры на изображении, делая его либо более реалистичным, либо более ярким.",
-            "tr": "Grafik ipuçlarında, isteğe bağlı bir biçim, görüntüde ek filtreler tanımlamanıza olanak tanır, böylece görüntüyü daha gerçekçi veya daha canlı hale getirebilirsiniz."
-        }
-    },
-    "qualityQuestion": {
-        "title": {
-            "en": "Set image quality",
-            "ru": "Установите качество изображения",
-            "tr": "Görüntü kalitesini ayarlayın"
+        "modelQuestion": {
+            "title": "Model seçin",
+            "description": "Kullanılabilir modeller listesi, hem OpenAI modelleri hem de üçüncü taraf hizmetlerinin modelleri ile güncellenecektir"
         },
-        "description": {
-            "en": "Generating an image in a standard format is cheaper. If you need the highest possible quality, then choose HD.",
-            "ru": "Генерация изображения в стандартном формате дешевле. Если вам нужно наивысшее качество, выберите HD.",
-            "tr": "Standart bir formatta bir görüntü oluşturmak daha ucuzdur. Mümkün olan en yüksek kaliteye ihtiyacınız varsa, HD'yi seçin."
-        }
-    },
-    "sizeQuestion": {
-        "title": {
-            "en": "Set image size",
-            "ru": "Установите размер изображения",
-            "tr": "Görüntü boyutunu ayarlayın"
+        "styleQuestion": {
+            "title": "Ek görüntü stili ayarlayın",
+            "description": "Grafik ipuçlarında, isteğe bağlı bir biçim, görüntüde ek filtreler tanımlamanıza olanak tanır, böylece görüntüyü daha gerçekçi veya daha canlı hale getirebilirsiniz."
         },
-        "description": {
-            "en": "The image can be generated in one of three selected proportions and sizes.",
-            "ru": "Изображение можно сгенерировать в одном из трех выбранных пропорций и размеров.",
-            "tr": "Görüntü, üç seçilen oran ve boyuttan birinde oluşturulabilir."
-        }
-    },
-    "memoryQuestion": {
-        "title": {
-            "en": "Choose memory size",
-            "ru": "Выберите размер памяти",
-            "tr": "Bellek boyutunu seçin"
+        "qualityQuestion": {
+            "title": "Görüntü kalitesini ayarlayın",
+            "description": "Standart bir formatta bir görüntü oluşturmak daha ucuzdur. Mümkün olan en yüksek kaliteye ihtiyacınız varsa, HD'yi seçin."
         },
-        "description": {
-            "en": "The higher the value, the more previous answers the AI remembers. But the higher the chance that the AI will respond less accurately, and also the higher the cost of use. If the task does not require a dynamic context, do not use memory storage. But it can be useful in complex prompts.",
-            "ru": "Чем выше значение, тем больше предыдущих ответов запоминает ИИ. Но тем выше вероятность того, что ИИ будет отвечать менее точно, а также тем выше стоимость использования. Если задача не требует динамического контекста, не используйте хранилище памяти. Однако это может быть полезно в сложных подсказках.",
-            "tr": "Değer ne kadar yüksekse, yapay zeka geçmiş cevapları o kadar fazla hatırlar. Ancak, yapay zekanın daha az doğru yanıt verme olasılığı o kadar yüksek olur ve kullanım maliyeti de o kadar yüksek olur. Görev dinamik bir bağlam gerektirmiyorsa, hafıza depolamasını kullanmayın. Ancak karmaşık ipuçlarında kullanışlı olabilir."
-        }
-    },
-    "isOpenQuestion": {
-        "title": {
-            "en": "Access to prompt",
-            "ru": "Доступ к подсказке",
-            "tr": "İpuçlarına erişim"
+        "sizeQuestion": {
+            "title": "Görüntü boyutunu ayarlayın",
+            "description": "Görüntü, üç seçilen oran ve boyuttan birinde oluşturulabilir."
         },
-        "description": {
-            "en": "Private prompts can only be used within the context of working with your account. Open prompts are available to everyone. You will receive 10% of the funds in your account from the amount of their use.",
-            "ru": "Частные подсказки могут использоваться только в контексте работы с вашей учетной записью. Открытые подсказки доступны всем. Вы получите 10% средств со своего счета от суммы их использования.",
-            "tr": "Özel ipuçları yalnızca hesabınızla çalışma bağlamında kullanılabilir. Açık ipuçları herkese açıktır. Hesabınızdaki fonların kullanım miktarından %10'unu alacaksınız."
-        }
+        "memoryQuestion": {
+            "title": "Bellek boyutunu seçin",
+            "description": "Değer ne kadar yüksekse, yapay zeka geçmiş cevapları o kadar fazla hatırlar. Ancak, yapay zekanın daha az doğru yanıt verme olasılığı o kadar yüksek olur ve kullanım maliyeti de o kadar yüksek olur. Görev dinamik bir bağlam gerektirmiyorsa, hafıza depolamasını kullanmayın. Ancak karmaşık ipuçlarında kullanışlı olabilir."
+        },
+        "isOpenQuestion": {
+            "title": "İpuçlarına erişim",
+            "description": "Özel ipuçları yalnızca hesabınızla çalışma bağlamında kullanılabilir. Açık ipuçları herkese açıktır. Hesabınızdaki fonların kullanım miktarından %10'unu alacaksınız."
+        },
+        "saveButton": "Değişiklikleri Kaydet"
     }
 }
