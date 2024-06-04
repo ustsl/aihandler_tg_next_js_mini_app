@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
 
     const [isLoad, setIsLoad] = useState(false);
-    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt, setUserLanguage } = useDataStore((state: any) => state);
+    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt, setUserLanguage, userLanguage } = useDataStore((state: any) => state);
 
 
     const { userId } = useTelegramStore((state: any) => state)
@@ -17,10 +17,14 @@ export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
     function userDataCreate() {
         getResponse({ token: TOKEN as string, method: `/users/${userId}` }).then(res => {
             const data = res?.data
-            setUserToken(data?.token?.token)
-            setUserBalance(parseFloat(data?.accounts?.balance))
-            setUserCurrentPrompt(data?.settings?.prompt_id)
-            setUserLanguage(data?.settings?.language)
+            const language = data?.settings?.language
+            const promptId = data?.settings?.prompt_id
+            const balance = data?.accounts?.balance
+            const token = data?.token?.token
+            token && setUserToken(token)
+            balance && setUserBalance(parseFloat(balance))
+            promptId && setUserCurrentPrompt(promptId)
+            language && setUserLanguage(language)
         })
     }
 
@@ -35,7 +39,7 @@ export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-            {isLoad && userToken && children}
+            {isLoad && userToken && userLanguage && children}
         </>
     )
 }
