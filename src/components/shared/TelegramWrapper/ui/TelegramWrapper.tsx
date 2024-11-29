@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTelegramStore } from "@/store/useTelegramStore";
 
 export const TelegramWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -16,13 +16,13 @@ export const TelegramWrapper = ({ children }: { children: React.ReactNode }) => 
                 setTg(tg);
             } else {
                 console.log('Telegram WebApp is undefined, retrying...');
-                setTimeout(initTg, 1000);
+                setTimeout(initTg, 500);
             }
         }
         initTg();
 
 
-    }, []);
+    }, [setTg]);
 
     return (
         <>{userId && children}</>

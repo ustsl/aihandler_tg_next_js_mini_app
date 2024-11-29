@@ -1,6 +1,6 @@
 'use client'
 
-import { getBaseQuery, getResponse } from "@/api/restAPI";
+import { getResponse } from "@/api/restAPI";
 import { TOKEN } from "@/api/settings";
 import { useDataStore } from "@/store/useDataStore";
 import { useTelegramStore } from "@/store/useTelegramStore";

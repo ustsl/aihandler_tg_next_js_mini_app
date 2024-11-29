@@ -42,7 +42,7 @@ export const ScriptsBlock = ({ gtmList }: IScriptBlock) => {
             clickmap:true,
             trackLinks:true,
             accurateTrackBounce:true,
-            webvisor:true
+            webvisor:false
         });
       `}} />
         </>

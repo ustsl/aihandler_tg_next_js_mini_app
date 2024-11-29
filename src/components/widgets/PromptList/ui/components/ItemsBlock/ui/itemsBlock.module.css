@@ -4,6 +4,7 @@
 }
 
 .prompt {
+    padding: 0px 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--tg-theme-secondary-bg-color);
     text-decoration: none;
@@ -18,10 +19,11 @@
     color: var(--tg-theme-section-header-text-color);
     font-weight: 500;
     transition: all .2s ease;
+    font-size: 17px;
 }
 
 .prompt:hover .title {
-    color: var(--tg-theme-accent-text-color)
+    color: var(--tg-theme-accent-text-color);
 }
 
 

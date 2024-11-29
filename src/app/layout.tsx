@@ -3,17 +3,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-
 import { TelegramWrapper } from "@/components/shared/TelegramWrapper";
 import { HeaderComponent } from "@/components/widgets/HeaderComponent";
 import { GridBlock } from "@/components/shared/GridBlock";
 import { FooterComponent } from "@/components/widgets/FooterComponent";
 import { DataWrapper } from "@/components/shared/DataWrapper";
-import { CloseButton } from "@/components/features/CloseButton";
 import { NotificationComponent } from "@/components/widgets/NotificationWidget";
-import { FlexWrapper } from "@/components/shared/FlexWrapper";
-import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
-import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { ScriptsBlock } from "@/components/shared/ScriptsBlock";
 import { FinalLinks } from "@/components/widgets/FinalLinks/ui/FinalLinks";
 
