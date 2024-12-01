@@ -34,8 +34,8 @@ export const SetPrompt = ({ uuid }: { uuid: string }) => {
 
     return (
 
-        <ContainerWrapper>
-            <ButtonComponent text={translation.button} onClick={putChangesHandler} />
-        </ContainerWrapper>
+
+        <ButtonComponent text={translation.button} onClick={putChangesHandler} />
+
     )
 }

@@ -42,9 +42,9 @@ export const DeletePromptWidget = ({ uuid }: { uuid: string }) => {
 
 
     return (
-        <ContainerWrapper>
+        <>
             <div className={styles.block}>
-                <MiniButtonComponent text={translation.button} onClick={openModal} />
+                <MiniButtonComponent text={translation.button} onClick={openModal} color='danger' />
             </div>
 
             <ModalComponent isOpen={isOpen} onClose={closeModal}>
@@ -56,6 +56,7 @@ export const DeletePromptWidget = ({ uuid }: { uuid: string }) => {
                     </div>
                 </>
             </ModalComponent>
-        </ContainerWrapper>
+        </>
+
     )
 }

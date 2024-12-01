@@ -13,3 +13,8 @@
 .button:hover {
     opacity: .9;
 }
+
+.dangerColor {
+    background-color: var(--danger-bg-color);
+    color: var(--danger-text-color);
+}

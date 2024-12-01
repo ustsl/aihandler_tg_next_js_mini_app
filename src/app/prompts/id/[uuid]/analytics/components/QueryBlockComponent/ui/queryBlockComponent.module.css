@@ -1,0 +1,29 @@
+.block {
+    display: grid;
+    gap: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--tg-theme-secondary-bg-color);
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+
+.block:last-child {
+    border-bottom: none;
+}
+
+.title {
+    color: var(--tg-theme-section-header-text-color);
+    transition: all .2s ease;
+    font-size: 14px;
+}
+
+.query {
+    color: var(--tg-theme-text-color);
+    font-size: 13px;
+}
+
+.additional {
+    color: var(--tg-theme-hint-color);
+    font-size: 12px;
+}

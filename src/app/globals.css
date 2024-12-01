@@ -18,6 +18,9 @@
 
   --success-color: #5c0;
   --accent-color: #08c;
+  --danger-bg-color: #feeae4;
+  --danger-text-color: #c61717;
+  --black-color: #0f0f0f;
 }
 
 body {

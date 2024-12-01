@@ -8,10 +8,10 @@ export const Pagination = ({ length, offset, limit, setOffset, next, prev }:
     function handlePagination(change: 'next' | 'prev') {
         switch (change) {
             case "next":
-                setOffset(offset + 10)
+                setOffset(offset + 30)
                 break;
             case "prev":
-                setOffset(offset - 10)
+                setOffset(offset - 30)
                 break;
             default:
                 console.log("Error");
