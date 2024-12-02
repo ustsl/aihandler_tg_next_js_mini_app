@@ -9,10 +9,7 @@ import { SetPrompt } from "@/components/widgets/SetPrompt";
 
 export default function Prompt({ params }: { params: any }) {
 
-
-
     return (
-
         <>
             <ContainerWrapper>
                 <SetPrompt uuid={params.uuid} />
@@ -22,13 +19,8 @@ export default function Prompt({ params }: { params: any }) {
                 <FlexWrapper justify="spaceBetween">
                     <MiniButtonLinkComponent href={`/prompts/id/${params.uuid}/analytics`} text="Analytics" />
                     <DeletePromptWidget uuid={params.uuid} />
-
-
                 </FlexWrapper>
             </ContainerWrapper>
-
         </>
-
-
     );
 }

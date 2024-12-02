@@ -16,7 +16,9 @@ import { TitleBlock } from "@/components/shared/TitleElement";
 
 export default function Analytics({ params }: { params: any }) {
 
-    const { userToken } = useDataStore((state: any) => state);
+
+
+    const { userToken, userUUID } = useDataStore((state: any) => state);
     const { userId } = useTelegramStore((state: any) => state);
 
     const [story, setStory] = useState<QueryResultRaw[]>([])
@@ -61,7 +63,7 @@ export default function Analytics({ params }: { params: any }) {
                 {isLoad &&
                     story.length > 0 ? story.map(item => {
                         return (
-                            <QueryBlockComponent key={item.uuid} item={item} />
+                            <QueryBlockComponent key={item.uuid} item={item} UUID={userUUID} />
                         )
                     })
                     :

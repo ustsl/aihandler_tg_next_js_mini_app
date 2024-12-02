@@ -9,18 +9,22 @@ import { useEffect, useState } from "react";
 export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
 
     const [isLoad, setIsLoad] = useState(false);
-    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt, setUserLanguage, userLanguage } = useDataStore((state: any) => state);
+    const { userToken, setUserToken, setUserBalance, setUserCurrentPrompt, setUserLanguage, userLanguage, setUserUUID } = useDataStore((state: any) => state);
 
 
     const { userId } = useTelegramStore((state: any) => state)
 
     function userDataCreate() {
+
         getResponse({ token: TOKEN as string, method: `/users/${userId}` }).then(res => {
+            console.log(res)
             const data = res?.data
             const language = data?.settings?.language
             const promptId = data?.settings?.prompt_id
             const balance = data?.accounts?.balance
             const token = data?.token?.token
+            const uuid = data?.uuid
+            uuid && setUserUUID(uuid)
             token && setUserToken(token)
             balance && setUserBalance(parseFloat(balance))
             promptId && setUserCurrentPrompt(promptId)

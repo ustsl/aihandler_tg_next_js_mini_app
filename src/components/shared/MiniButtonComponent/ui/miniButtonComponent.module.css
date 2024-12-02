@@ -15,6 +15,7 @@
 }
 
 .dangerColor {
-    background-color: var(--danger-bg-color);
+    background-color: transparent;
     color: var(--danger-text-color);
+    font-size: 12px;
 }
