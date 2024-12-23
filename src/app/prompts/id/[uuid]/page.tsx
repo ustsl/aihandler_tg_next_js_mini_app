@@ -4,16 +4,14 @@ import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { FlexWrapper } from "@/components/shared/FlexWrapper";
 import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
 import { DeletePromptWidget } from "@/components/widgets/DeletePrompt";
-import { PromptItem } from "@/components/widgets/PromptItem";
-import { SetPrompt } from "@/components/widgets/SetPrompt";
+import { PromptItem } from "@/app/components/PromptItem";
+import { SetPrompt } from "@/app/components/SetPrompt";
 
 export default function Prompt({ params }: { params: any }) {
 
     return (
         <>
-            <ContainerWrapper>
-                <SetPrompt uuid={params.uuid} />
-            </ContainerWrapper>
+
             <PromptItem uuid={params.uuid} />
             <ContainerWrapper>
                 <FlexWrapper justify="spaceBetween">

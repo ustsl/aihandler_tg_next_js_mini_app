@@ -1,4 +1,5 @@
 .block {
+    display: grid;
     width: 100%;
     padding: 20px;
     background-color: var(--tg-theme-section-bg-color);

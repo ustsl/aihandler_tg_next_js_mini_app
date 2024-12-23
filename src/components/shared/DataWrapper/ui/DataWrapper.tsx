@@ -17,7 +17,7 @@ export const DataWrapper = ({ children }: { children: React.ReactNode }) => {
     function userDataCreate() {
 
         getResponse({ token: TOKEN as string, method: `/users/${userId}` }).then(res => {
-            console.log(res)
+
             const data = res?.data
             const language = data?.settings?.language
             const promptId = data?.settings?.prompt_id

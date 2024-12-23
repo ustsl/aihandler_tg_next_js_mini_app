@@ -18,7 +18,7 @@ export default function Page() {
 
     <ContainerWrapper>
       <GridBlock gridSize="XS">
-        <TitleBlock tag="h1" text="AIHandler" />
+        <TitleBlock tag="h1" text="IMVO AI" />
         <p>{translation.start}</p>
         <div dangerouslySetInnerHTML={{ __html: translation.text }} />
       </GridBlock>

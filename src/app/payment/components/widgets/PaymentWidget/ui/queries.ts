@@ -34,8 +34,6 @@ export async function paymentServiceResponse(amount: number, uuid: string, user_
 
     try {
         const response = await postResponse({ token: PAYMENT_SECRET_KEY as string, body: body, method: url });
-        console.log(response)
-        console.log(0)
         return response;
     } catch (error) {
         throw error;

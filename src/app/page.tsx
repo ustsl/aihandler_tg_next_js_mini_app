@@ -1,7 +1,8 @@
 'use client'
-import { CreatePrompt } from "@/components/widgets/CreatePrompt";
-import { PromptList } from "@/components/widgets/PromptList";
-import { SetPromptById } from "@/components/widgets/SetPromtById";
+
+import { CreatePrompt } from "@/components/features/CreatePrompt";
+import { PromptList } from "@/app/components/PromptList";
+import { SetPromptById } from "@/app/components/SetPromtById";
 
 export default function Home() {
 
@@ -12,7 +13,5 @@ export default function Home() {
       <PromptList />
       <SetPromptById />
     </>
-
-
   );
 }

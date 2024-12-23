@@ -1,0 +1,30 @@
+{
+    "ru": {
+        "prompts": "Промпты",
+        "scenario": "Многоуровневые сценарии",
+        "balance": "Баланс",
+        "faq": "Мануал",
+        "about": "О приложении"
+    },
+    "en": {
+        "prompts": "Prompts",
+        "scenario": "Multi-level scenarios",
+        "balance": "Balance",
+        "faq": "FAQ",
+        "about": "About the app"
+    },
+    "tr": {
+        "prompts": "Komutlar",
+        "scenario": "Çok katmanlı senaryolar",
+        "balance": "Bakiye",
+        "faq": "SSS",
+        "about": "Uygulama hakkında"
+    },
+    "it": {
+        "prompts": "Prompt",
+        "scenario": "Scenari multilivello",
+        "balance": "Bilancio",
+        "faq": "FAQ",
+        "about": "Informazioni sull'app"
+    }
+}

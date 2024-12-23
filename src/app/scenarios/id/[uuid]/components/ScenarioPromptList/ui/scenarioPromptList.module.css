@@ -1,0 +1,18 @@
+.prompt {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color)
+}
+
+.id {
+    font-size: var(--xs-font-size);
+    color: var(--tg-theme-hint-color);
+}
+
+.description {
+    font-size: var(--s-font-size);
+    color: var(--tg-theme-hint-color);
+}

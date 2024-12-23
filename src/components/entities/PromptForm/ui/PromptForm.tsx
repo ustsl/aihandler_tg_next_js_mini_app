@@ -26,7 +26,6 @@ export const PromptForm = ({ handleChange, fields, saveChangesHandler, isChanged
     const { userLanguage } = useDataStore((state: any) => state);
     const translation = translate[`${userLanguage as baseLanguages}`]
 
-
     return (
         <GridBlock gridSize="XS">
             <ContainerWrapper>

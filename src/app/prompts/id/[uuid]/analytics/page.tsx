@@ -10,7 +10,7 @@ import { useTelegramStore } from "@/store/useTelegramStore";
 import { QueryResultRaw } from "@/types/raw/analytics";
 import { useEffect, useState } from "react";
 import { QueryBlockComponent } from "./components/QueryBlockComponent/ui/QueryBlockComponent";
-import { Pagination } from "@/components/widgets/PromptList/ui/components/Pagination";
+import { Pagination } from "@/app/components/PromptList/ui/components/Pagination";
 import { TitleBlock } from "@/components/shared/TitleElement";
 
 

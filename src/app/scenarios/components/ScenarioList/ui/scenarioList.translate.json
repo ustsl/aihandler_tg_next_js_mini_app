@@ -1,0 +1,34 @@
+{
+    "ru": {
+        "next": "еще",
+        "prev": "вернуться",
+        "title": "Доступные сценарии",
+        "hint": "Здесь отображается список доступных сценариев. Перейдите к любой из них, чтобы отредактировать, получить ссылку API или выбрать в качестве предустановки для чата",
+        "search": "Панель поиска сценариев",
+        "noResult": "Нет доступных сценариев. Создайте первый."
+    },
+    "en": {
+        "next": "next",
+        "prev": "back",
+        "title": "Available scenarios",
+        "hint": "Here is a list of available scenarios. Select any to edit, get an API link, or choose as a preset for the chat.",
+        "search": "Scenario search panel",
+        "noResult": "No scenarios available. Create the first one."
+    },
+    "tr": {
+        "next": "devam",
+        "prev": "geri",
+        "title": "Mevcut senaryolar",
+        "hint": "Mevcut senaryoların bir listesi burada görüntülenir. Herhangi birini düzenlemek, API bağlantısını almak veya sohbet için ön ayar olarak seçmek için seçin.",
+        "search": "Senaryo arama paneli",
+        "noResult": "Kullanılabilir senaryo yok. İlkini oluşturun."
+    },
+    "it": {
+        "next": "avanti",
+        "prev": "indietro",
+        "title": "Scenari disponibili",
+        "hint": "Qui viene visualizzato un elenco degli scenari disponibili. Seleziona uno per modificarlo, ottenere un link API o sceglierlo come preset per la chat.",
+        "search": "Pannello di ricerca degli scenari",
+        "noResult": "Nessuno scenario disponibile. Crea il primo."
+    }
+}

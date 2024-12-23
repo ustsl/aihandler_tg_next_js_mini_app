@@ -1,0 +1,5 @@
+.hint {
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--tg-theme-section-header-text-color)
+}

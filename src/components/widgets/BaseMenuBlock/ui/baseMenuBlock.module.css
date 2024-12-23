@@ -1,0 +1,9 @@
+.block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 10px 20px;
+}

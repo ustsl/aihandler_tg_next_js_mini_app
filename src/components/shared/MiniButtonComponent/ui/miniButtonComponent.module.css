@@ -19,3 +19,8 @@
     color: var(--danger-text-color);
     font-size: 12px;
 }
+
+.reverseColor {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-subtitle-text-color)
+}

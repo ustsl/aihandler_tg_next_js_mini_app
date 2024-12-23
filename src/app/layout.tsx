@@ -11,6 +11,7 @@ import { DataWrapper } from "@/components/shared/DataWrapper";
 import { NotificationComponent } from "@/components/widgets/NotificationWidget";
 import { ScriptsBlock } from "@/components/shared/ScriptsBlock";
 import { FinalLinks } from "@/components/widgets/FinalLinks/ui/FinalLinks";
+import { BaseMenuBlock } from "@/components/widgets/BaseMenuBlock";
 
 
 
@@ -49,6 +50,7 @@ export default function RootLayout({
           <DataWrapper>
             <GridBlock gridSize="XS">
               <HeaderComponent />
+              <BaseMenuBlock />
               {children}
               <FooterComponent />
               <FinalLinks />

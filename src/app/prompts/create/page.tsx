@@ -1,10 +1,11 @@
 'use client'
 
-import { CreatePrompt } from "@/components/widgets/CreatePrompt";
-import { PromptItemCreate } from "@/components/widgets/PromptItem";
-import { PromptList } from "@/components/widgets/PromptList";
+import { CreatePrompt } from "@/components/features/CreatePrompt";
+import { PromptItemCreate } from "@/app/components/PromptItem";
+import { PromptList } from "@/app/components/PromptList";
 
 export default function Home() {
+
 
 
     return (

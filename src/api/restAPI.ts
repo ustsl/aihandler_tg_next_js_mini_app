@@ -16,10 +16,10 @@ export interface IAPIPost extends IAPI {
 
 export async function getBaseQuery(method: string, headers = HEADERS) {
   const url = API_DOMAIN + API_VERSION + method;
-
   const res = await fetch(url, { headers: headers })
 
   if (!res.ok) {
+    console.log(res)
     return false
   }
   return res.json()

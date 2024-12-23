@@ -1,0 +1,15 @@
+.prompts {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.prompt {
+    border: none;
+    cursor: pointer;
+    padding: 10px 14px;
+    color: var(--tg-theme-text-color);
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: var(--border-radius);
+}

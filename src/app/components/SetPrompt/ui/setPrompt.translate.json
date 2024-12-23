@@ -1,0 +1,14 @@
+{
+    "en": {
+        "button": "Set prompt in Telegram chat",
+        "notification": "Prompt was installed in Telegram chat"
+    },
+    "tr": {
+        "button": "Telegram sohbetine istem ayarla",
+        "notification": "İstem Telegram sohbetine kuruldu"
+    },
+    "ru": {
+        "button": "Установить подсказку в Telegram",
+        "notification": "Подсказка установлена в Telegram"
+    }
+}

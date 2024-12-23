@@ -1,0 +1,11 @@
+.link {
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--tg-theme-text-color);
+    font-size: var(--s-font-size);
+    padding-bottom: 2px;
+}
+
+.active {
+    border-bottom: 1px solid var(--tg-theme-text-color);
+}
