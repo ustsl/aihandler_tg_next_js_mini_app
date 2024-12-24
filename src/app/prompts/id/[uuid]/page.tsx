@@ -3,7 +3,7 @@
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { FlexWrapper } from "@/components/shared/FlexWrapper";
 import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
-import { DeletePromptWidget } from "@/components/widgets/DeletePrompt";
+import { DeletePromptWidget } from "@/components/features/DeletePrompt";
 import { PromptItem } from "@/app/components/PromptItem";
 import { SetPrompt } from "@/app/components/SetPrompt";
 

@@ -3,15 +3,16 @@
 import { getBaseQuery } from "@/api/restAPI";
 import { ContainerWrapper } from "@/components/shared/ContainerWrapper";
 import { FlexWrapper } from "@/components/shared/FlexWrapper";
-import { GridBlock } from "@/components/shared/GridBlock";
+
 import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent";
 import { useDataStore } from "@/store/useDataStore";
 import { useTelegramStore } from "@/store/useTelegramStore";
 import { QueryResultRaw } from "@/types/raw/analytics";
 import { useEffect, useState } from "react";
 import { QueryBlockComponent } from "./components/QueryBlockComponent/ui/QueryBlockComponent";
-import { Pagination } from "@/app/components/PromptList/ui/components/Pagination";
+
 import { TitleBlock } from "@/components/shared/TitleElement";
+import { Pagination } from "@/components/entities/Pagination";
 
 
 export default function Analytics({ params }: { params: any }) {

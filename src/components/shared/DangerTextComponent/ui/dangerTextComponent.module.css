@@ -1,0 +1,39 @@
+.text {
+    display: grid;
+    gap: 10px;
+}
+
+
+.gapM {
+    gap: 20px;
+}
+
+.gapS {
+    gap: 10px;
+}
+
+.gapXS {
+    gap: 0px;
+}
+
+
+.gapXS ul {
+    gap: 4px;
+}
+
+.sizeXS,
+.sizeXS p,
+.sizeXS span {
+    font-size: 14px;
+}
+
+
+.gapS blockquote:first-child,
+.gapXS blockquote:first-child {
+    margin-top: 0px;
+}
+
+.gapS blockquote,
+.gapXS blockquote {
+    margin-top: 20px;
+}

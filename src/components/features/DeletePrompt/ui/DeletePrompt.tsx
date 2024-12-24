@@ -9,7 +9,7 @@ import { TitleBlock } from '@/components/shared/TitleElement';
 import { API_DOMAIN, API_VERSION } from '@/api/settings';
 import { useDataStore } from '@/store/useDataStore';
 import { useTelegramStore } from '@/store/useTelegramStore';
-import { useNotificationStore } from '../../NotificationWidget';
+import { useNotificationStore } from '../../../widgets/NotificationWidget';
 import { useRouter } from 'next/navigation';
 import { deleteResponse } from '@/api/restAPI';
 import { baseLanguages } from '@/types/baseTypes';

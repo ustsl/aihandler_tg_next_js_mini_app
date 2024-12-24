@@ -1,5 +1,6 @@
 'use client'
 
+import { DangerTextComponent } from '@/components/shared/DangerTextComponent';
 import translate from './page.translate.json'
 
 
@@ -20,7 +21,8 @@ export default function Page() {
       <GridBlock gridSize="XS">
         <TitleBlock tag="h1" text="IMVO AI" />
         <p>{translation.start}</p>
-        <div dangerouslySetInnerHTML={{ __html: translation.text }} />
+        <DangerTextComponent text={translation.text} gapSize={'M'} />
+
       </GridBlock>
     </ContainerWrapper>
 
