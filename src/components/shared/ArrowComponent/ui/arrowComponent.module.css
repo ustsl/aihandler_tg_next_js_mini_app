@@ -1,0 +1,42 @@
+.arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--tg-theme-button-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+}
+
+
+.icon {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: solid var(--tg-theme-text-color);
+    border-width: 2px 2px 0 0;
+    transform: translateY(-50%);
+}
+
+.left .icon {
+    transform: rotate(-135deg);
+}
+
+.right .icon {
+    transform: rotate(45deg);
+}
+
+.up .icon {
+    margin-top: 2px;
+    transform: rotate(-45deg);
+}
+
+.down .icon {
+    margin-bottom: 2px;
+    transform: rotate(135deg);
+}

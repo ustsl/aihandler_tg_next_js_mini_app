@@ -11,7 +11,8 @@ import { getBaseQuery } from '@/api/restAPI'
 import { useDataStore } from '@/store/useDataStore'
 import { useTelegramStore } from '@/store/useTelegramStore'
 import { PromptListItemRaw } from '@/types/raw/prompts'
-import useScenarioStore from '../../ScenarioForm/ui/scenario.store'
+import useScenarioStore from '@/store/scenario.store'
+
 
 export const AddScenarioPrompt = () => {
 
@@ -46,12 +47,11 @@ export const AddScenarioPrompt = () => {
 
     function handleAddPrompt(prompt: PromptListItemRaw) {
 
-
         addPrompt({
             prompt_id: prompt.uuid,
             title: prompt.title,
             description: prompt.description,
-            order: prompts.length,
+            order: prompts.length + 1,
             independent: true,
             model: prompt.model
         })

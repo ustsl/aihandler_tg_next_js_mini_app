@@ -1,0 +1,1 @@
+export { DeleteButtonComponent } from "./ui/DeleteButtonComponent";

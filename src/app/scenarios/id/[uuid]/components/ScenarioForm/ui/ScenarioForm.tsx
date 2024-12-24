@@ -18,10 +18,11 @@ import { QuestionDataWrapper } from "@/components/shared/QuestionDataWrapper"
 
 import { baseLanguages } from "@/types/baseTypes"
 
-import { ButtonComponent } from '@/components/shared/ButtonComponent'
+
 import { useNotificationStore } from '@/components/widgets/NotificationWidget'
-import useScenarioStore from './scenario.store'
+
 import { InputElement } from '@/components/shared/InputElement'
+import useScenarioStore from '@/store/scenario.store'
 
 
 export const ScenarioFormComponent = ({ uuid }: { uuid: string }) => {
@@ -31,9 +32,7 @@ export const ScenarioFormComponent = ({ uuid }: { uuid: string }) => {
     const { title, description, setTitle, setDescription, setPrompts } = useScenarioStore()
 
     const { userLanguage } = useDataStore((state: any) => state);
-    const translation = translate[`${userLanguage as baseLanguages}`]
 
-    const { setNotification } = useNotificationStore((state: any) => state);
     const { userToken } = useDataStore((state: any) => state);
     const { userId } = useTelegramStore((state: any) => state)
 

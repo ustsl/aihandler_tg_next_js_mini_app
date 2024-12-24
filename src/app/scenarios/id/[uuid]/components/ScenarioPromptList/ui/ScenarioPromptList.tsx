@@ -1,16 +1,17 @@
 'use client'
 
 import { GridBlock } from '@/components/shared/GridBlock'
-import useScenarioStore from '../../ScenarioForm/ui/scenario.store'
-import styles from './scenarioPromptList.module.css'
+
+
 import { ContainerWrapper } from '@/components/shared/ContainerWrapper'
 import { TitleHintComponent } from '@/components/shared/TitleHintComponent'
-import { FlexWrapper } from '@/components/shared/FlexWrapper'
-import { MiniButtonComponent } from '@/components/shared/MiniButtonComponent'
+
+import { PromptBlockComponent } from './components/PromptBlockComponent'
+import useScenarioStore from '@/store/scenario.store'
 
 export const ScenarioPromptList = () => {
 
-    const { prompts, updatePrompt } = useScenarioStore()
+    const { prompts } = useScenarioStore()
 
     return (
         <>
@@ -20,28 +21,7 @@ export const ScenarioPromptList = () => {
                         <TitleHintComponent text='Current prompt list' />
                         {prompts.map(item => {
                             return (
-                                <div className={styles.prompt} key={item.prompt_id}>
-                                    <span className={styles.id}>{item.prompt_id}</span>
-
-                                    <span className={styles.title}>{item.title}</span>
-                                    <span className={styles.id}> {item.model}</span>
-
-                                    <FlexWrapper justify='spaceBetween'>
-                                        <MiniButtonComponent
-                                            text={item.independent ? 'Independent' : 'Depends'}
-                                            onClick={() => updatePrompt(
-                                                item.prompt_id,
-                                                { independent: !item.independent })}
-                                            color='reverse'
-                                        />
-                                        <FlexWrapper>
-                                            12
-
-
-
-                                        </FlexWrapper>
-                                    </FlexWrapper>
-                                </div>
+                                <PromptBlockComponent key={item.prompt_id} item={item} />
                             )
                         })}
                     </GridBlock>
