@@ -1,4 +1,14 @@
-export type ModelOptions = 'gpt-3.5-turbo' | 'gpt-4-turbo' | 'gpt-4o' | 'dall-e-3'
+export type ModelOptions =
+    | 'gpt-3.5-turbo'
+    | 'gpt-3.5-turbo-0125'
+    | 'gpt-4-turbo'
+    | 'gpt-4-turbo-2024-04-09'
+    | 'gpt-4o'
+    | 'gpt-4o-audio-preview'
+    | 'gpt-4o-mini'
+    | 'gpt-4o-mini-audio-preview'
+    | 'o1'
+    | 'dall-e-3';
 
 export type ModelSize = 'no memory' | 'one message' | 'low' | 'medium' | 'large';
 

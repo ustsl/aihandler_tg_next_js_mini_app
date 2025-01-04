@@ -1,5 +1,3 @@
-export type ModelOptions = 'gpt-3.5-turbo' | 'gpt-4-turbo' | 'gpt-4o' | 'dall-e-3'
-
 export type ModelSize = 'no memory' | 'one message' | 'low' | 'medium' | 'large';
 
 export type isOpenType = 'private' | 'open'

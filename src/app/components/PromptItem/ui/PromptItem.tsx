@@ -36,7 +36,7 @@ export const PromptItem = ({ uuid }: { uuid: string }) => {
         title: '',
         description: '',
         prompt: '',
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o-mini',
         isOpen: 'private',
         size: 'no memory',
         tuning: {}
