@@ -1,6 +1,7 @@
 
+import { ModelOptions } from '@/app/components/PromptItem/ui/promptForm.props';
 import { ModelTuning } from '@/components/entities/PromptForm';
-import { ModelOptions, ModelSize, isOpenType } from '@/components/entities/PromptForm/ui/promptForm.props';
+import { ModelSize, isOpenType } from '@/components/entities/PromptForm/ui/promptForm.props';
 import { useState } from 'react';
 
 export interface PromptFormFields {
