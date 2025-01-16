@@ -11,7 +11,7 @@ export const APIQueryElement = ({ uuid }: { uuid: string }) => {
     const { userToken } = useDataStore((state: any) => state);
     const { userId } = useTelegramStore((state: any) => state)
 
-    const url = `URL: https://aihandler.qsbot.app/v1/queries/${userId && userId}/scenario`;
+    const url = `URL: https://imvo.qspk.me/v1/queries/${userId && userId}/scenario`;
     const headers = `Headers: {'Authorization': '${userToken && userToken}'}`;
     const body = `Body: {"scenario_id": "${uuid}", "query": "your text query"}`;
     const textToCopy = `${url}\n${headers}\n${body}`;
@@ -22,7 +22,7 @@ export const APIQueryElement = ({ uuid }: { uuid: string }) => {
             <CopyBlockContainer textToCopy={textToCopy}>
                 {userId &&
                     <p>
-                        URL: https://aihandler.qsbot.app/v1/queries/{userId}/scenario
+                        URL: https://imvo.qspk.me/v1/queries/{userId}/scenario
                     </p>}
                 {userToken &&
                     <p>

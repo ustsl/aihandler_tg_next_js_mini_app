@@ -3,7 +3,7 @@ import { CopyBlockContainer } from '@/components/shared/CopyBlockContainer';
 
 export const APIQueryElement = ({ tg, userToken, uuid }: { tg: string, userToken: string, uuid: string }) => {
 
-    const url = `URL: https://aihandler.qsbot.app/v1/queries/${tg}`;
+    const url = `URL: https://imvo.qspk.me/v1/queries/${tg}`;
     const headers = `Headers: {'Authorization': '${userToken}'}`;
     const body = `Body: {"prompt_id": "${uuid}", "query": "your text query"}`;
     const textToCopy = `${url}\n${headers}\n${body}`;
@@ -12,7 +12,7 @@ export const APIQueryElement = ({ tg, userToken, uuid }: { tg: string, userToken
     return (
         <CopyBlockContainer textToCopy={textToCopy}>
             <p>
-                URL: https://aihandler.qsbot.app/v1/queries/{tg}
+                URL: https://imvo.qspk.me/v1/queries/{tg}
             </p>
 
             <p>
