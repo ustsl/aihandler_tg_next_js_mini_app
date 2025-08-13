@@ -10,12 +10,10 @@ import {
     descriptionQuestion, isOpenQuestion, memoryQuestion,
     modelQuestion, promptQuestion, qualityQuestion, sizeQuestion, styleQuestion, titleQuestion
 } from "./promptFieldDescriptions"
-import {
-    isOpenOptions, modelOptions, modelSizeOptions,
-    tuningQualityOptions, tuningSizeOptions, tuningStyleOptions
-} from "./promptFieldOptions"
+
 import { useDataStore } from "@/store/useDataStore"
 import { baseLanguages } from '@/types/baseTypes'
+import { isOpenOptions, modelOptions, modelSizeOptions, tuningQualityOptions, tuningSizeOptions, tuningStyleOptions } from '@/settings'
 
 
 
