@@ -46,7 +46,7 @@ export const WalletBlock = () => {
                             <div className={styles.hintTitle}>{t.hintTitle}</div>
                             <div className={styles.hintText}>{t.hintText}</div>
                             <div className={styles.hintRate}>
-                                {t.hintRatePrefix} 1⭐ = ${USD_PER_STAR.toFixed(2)} ({t.or} 1$ = {(1 / USD_PER_STAR).toFixed(3)}⭐)
+                                {t.hintRatePrefix} 1⭐ = ${USD_PER_STAR.toFixed(4)} ({t.or} 1$ = {(1 / USD_PER_STAR).toFixed(4)}⭐)
                             </div>
                         </div>
                     )}
