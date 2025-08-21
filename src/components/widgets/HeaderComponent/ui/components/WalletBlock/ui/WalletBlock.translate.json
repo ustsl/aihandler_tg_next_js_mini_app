@@ -1,0 +1,26 @@
+{
+  "en": {
+    "rateTitle": "Show Stars/USD rate",
+    "showRate": "Rate & how to top up",
+    "hintTitle": "Stars rate & top-up",
+    "hintText": "Use the Telegram bot interface to top up your balance with STARS.",
+    "hintRatePrefix": "Current rate:",
+    "or": "or"
+  },
+  "ru": {
+    "rateTitle": "Показать курс и оплату",
+    "showRate": "Курс и как оплатить",
+    "hintTitle": "Курс Stars и пополнение",
+    "hintText": "Используйте интерфейс телеграм-бота для пополнения баланса с помощью STARS",
+    "hintRatePrefix": "Текущий курс:",
+    "or": "или"
+  },
+  "tr": {
+    "rateTitle": "Kur ve ödeme bilgisi",
+    "showRate": "Kur ve nasıl ödenir",
+    "hintTitle": "Stars kuru ve bakiye yükleme",
+    "hintText": "Bakiyenizi STARS ile doldurmak için Telegram bot arayüzünü kullanın.",
+    "hintRatePrefix": "Güncel kur:",
+    "or": "veya"
+  }
+}

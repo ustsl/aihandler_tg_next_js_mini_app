@@ -22,7 +22,6 @@ export const FinalLinks = () => {
             <FlexWrapper>
                 <CloseButton text={returnButtonText} />
                 <MiniButtonLinkComponent href="https://t.me/ustsl" text={writeButtonText} />
-                <MiniButtonLinkComponent href="https://imvo.site/faq" text={readButtonText} />
             </FlexWrapper>
         </ContainerWrapper>
     )

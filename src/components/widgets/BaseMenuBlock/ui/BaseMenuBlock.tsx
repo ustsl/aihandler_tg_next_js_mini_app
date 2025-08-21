@@ -21,9 +21,8 @@ export const BaseMenuBlock = () => {
         <div className={styles.block}>
             <MenuLinkComponent href='/' text={translation.prompts} isActive={router.includes('prompts') || router == '/'} />
             <MenuLinkComponent href='/scenarios' text={translation.scenario} isActive={router.includes('scenarios')} />
-            {/* <MenuLinkComponent href='/faq' text={translation.faq} isActive={router.includes('faq')} /> */}
             <MenuLinkComponent href='/about' text={translation.about} isActive={router.includes('about')} />
-            <MenuLinkComponent href='/payment' text={translation.balance} isActive={router.includes('payment')} />
+
         </div>
     )
 }

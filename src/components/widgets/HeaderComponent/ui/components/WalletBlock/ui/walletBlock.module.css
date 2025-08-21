@@ -1,34 +1,70 @@
 .block {
-    display: flex;
-    align-items: center;
-    color: var(--tg-theme-accent-text-color);
-    text-decoration: none;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-    transition: all .2s ease;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--tg-theme-accent-text-color);
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  transition: all 0.2s ease;
 }
 
-.block:hover {
-    opacity: .9 !important;
+.value {
+  font-weight: 500;
+  font-size: 1.3em;
 }
 
-.block svg {
-    font-size: 1.4em;
+.rate {
+  margin-left: 8px;
+  font-size: 0.9em;
+  opacity: 0.9;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
 }
 
+.rate:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
 
-.block span {
-    align-items: center;
-    font-weight: 500;
-    font-size: 1.3em;
+.hint {
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  z-index: 5;
+  margin-top: 8px;
+  min-width: 260px;
+  max-width: 360px;
+  padding: 10px 12px;
+  background: var(--tg-theme-secondary-bg-color);
+  color: var(--tg-theme-text-color);
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.hintTitle {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.hintText {
+  font-size: 0.92em;
+  opacity: 0.9;
+}
+.hintRate {
+  margin-top: 8px;
+  font-size: 0.9em;
+  opacity: 0.95;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
