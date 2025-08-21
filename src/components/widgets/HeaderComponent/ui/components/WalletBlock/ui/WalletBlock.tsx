@@ -5,7 +5,7 @@ import styles from './walletBlock.module.css';
 import translate from './WalletBlock.translate.json';
 import { useDataStore } from '@/store/useDataStore';
 
-const USD_PER_STAR = 0.13; // 1 ⭐ = $0.13
+const USD_PER_STAR = 0.013; // 1 ⭐ = $0.13
 
 export const WalletBlock = () => {
     const { userBalance, userLanguage } = useDataStore((state: any) => state); // userBalance в USD
