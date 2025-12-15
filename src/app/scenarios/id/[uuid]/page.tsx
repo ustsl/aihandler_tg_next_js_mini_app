@@ -7,17 +7,22 @@ import { ScenarioPromptList } from "./components/ScenarioPromptList";
 import { APIQueryElement } from "./components/APIQueryElement/ui/APIQueryElement";
 
 
-export default function Scenario({ params }: { params: any }) {
+export default async function Scenario({
+    params,
+}: {
+    params: Promise<{ uuid: string }>;
+}) {
+    const { uuid } = await params;
 
     return (
 
         <>
-            <ScenarioFormComponent uuid={params.uuid} />
+            <ScenarioFormComponent uuid={uuid} />
             <ScenarioPromptList />
             <AddScenarioPrompt />
-            <SaveScenarioComponent uuid={params.uuid} />
-            <APIQueryElement uuid={params.uuid} />
-            <DeleteScenario uuid={params.uuid} />
+            <SaveScenarioComponent uuid={uuid} />
+            <APIQueryElement uuid={uuid} />
+            <DeleteScenario uuid={uuid} />
         </>
 
 

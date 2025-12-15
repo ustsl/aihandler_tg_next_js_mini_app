@@ -8,15 +8,20 @@ import { MiniButtonLinkComponent } from "@/components/shared/MiniButtonComponent
 import { useDataStore } from "@/store/useDataStore";
 import { useTelegramStore } from "@/store/useTelegramStore";
 import { QueryResultRaw } from "@/types/raw/analytics";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { QueryBlockComponent } from "./components/QueryBlockComponent/ui/QueryBlockComponent";
 
 import { TitleBlock } from "@/components/shared/TitleElement";
 import { Pagination } from "@/components/entities/Pagination";
 
 
-export default function Analytics({ params }: { params: any }) {
+export default function Analytics({
+    params,
+}: {
+    params: Promise<{ uuid: string }>;
+}) {
 
+    const { uuid } = use(params);
 
 
     const { userToken, userUUID } = useDataStore((state: any) => state);
@@ -28,7 +33,7 @@ export default function Analytics({ params }: { params: any }) {
     const [isLoad, setIsLoad] = useState<boolean>(false)
     function userDataCreate() {
         const headers = { 'Authorization': userToken as string } as any
-        const queryLink = `/queries/${userId}/${params.uuid}?offset=${offset}`
+        const queryLink = `/queries/${userId}/${uuid}?offset=${offset}`
         getBaseQuery(queryLink, headers).then((res) => {
             if (res?.result) {
                 setStory(res?.result as QueryResultRaw[])
@@ -52,7 +57,7 @@ export default function Analytics({ params }: { params: any }) {
             <ContainerWrapper>
                 <FlexWrapper>
 
-                    <MiniButtonLinkComponent href={`/prompts/id/${params.uuid}`} text="Back to prompt" />
+                    <MiniButtonLinkComponent href={`/prompts/id/${uuid}`} text="Back to prompt" />
                     <MiniButtonLinkComponent href={`/`} text="Prompt list" />
                 </FlexWrapper>
             </ContainerWrapper>
