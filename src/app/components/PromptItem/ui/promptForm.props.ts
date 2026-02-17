@@ -6,7 +6,6 @@ export type ModelOptions =
   | "dall-e-3"
   | "gpt-4o-mini"
   | "gpt-4o-mini-audio-preview"
-  | "gpt-4o"
   | "gpt-4o-audio-preview";
 
 export type ModelSize =
